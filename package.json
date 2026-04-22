@@ -1,0 +1,16 @@
+{
+  "name": "tokyo-restaurant-website",
+  "version": "1.0.0",
+  "description": "Tokyo Express — Hibachi and Boba. Official restaurant website (Greensboro, NC).",
+  "private": true,
+  "scripts": {
+    "start": "serve . --listen $PORT --no-clipboard --single",
+    "dev": "serve . --listen 3000 --no-clipboard --single"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

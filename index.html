@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tokyo Express — Hibachi and Boba | Greensboro, NC</title>
+<meta name="description" content="Tokyo Express - Authentic Hibachi and handcrafted Boba Tea in Greensboro, NC. Sizzling hibachi plates, bold flavors, and fresh boba drinks." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+JP:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Shippori+Mincho:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ---------- RESET & BASE ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ---------- COLOR TOKENS ---------- */
+:root {
+  --red: #c8102e;
+  --red-dark: #8b0a20;
+  --red-light: #e63946;
+  --black: #0d0d0d;
+  --ink: #1a1a1a;
+  --white: #ffffff;
+  --cream: #f7f3ee;
+  --gold: #d4a017;
+}
+
+/* ---------- UTILS ---------- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.jp-font { font-family: 'Shippori Mincho', serif; }
+.stamp { font-family: 'Noto Serif JP', serif; color: var(--red); font-weight: 900; }
+
+/* ---------- NAV ---------- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(13,13,13,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--red);
+  z-index: 100;
+  padding: 14px 0;
+  transition: all 0.3s;
+}
+.nav-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1300px; margin: 0 auto; padding: 0 28px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-circle {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e63946, #8b0a20);
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+.nav-logo-circle::before {
+  content: "⛩";
+  font-size: 26px; color: #1a1a1a;
+  position: relative; z-index: 2;
+}
+.nav-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 2px;
+  color: #fff;
+  line-height: 1;
+}
+.nav-logo-text span {
+  display: block; font-size: 10px; letter-spacing: 3px;
+  color: var(--red-light); margin-top: 2px;
+}
+.nav-links { display: flex; gap: 34px; align-items: center; }
+.nav-links a {
+  color: #fff; text-decoration: none;
+  font-weight: 500; font-size: 14px;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a:hover { color: var(--red-light); }
+.nav-links a::after {
+  content: ""; position: absolute; bottom: -6px; left: 0;
+  width: 0; height: 2px; background: var(--red);
+  transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--red); color: #fff !important;
+  padding: 10px 22px; border-radius: 30px;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--red-dark); }
+.nav-cta::after { display: none; }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 26px; height: 2px; background: #fff; transition: 0.3s; }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(13,13,13,0.85), rgba(139,10,32,0.75)),
+    radial-gradient(circle at 30% 50%, rgba(200,16,46,0.4), transparent 50%),
+    #0d0d0d;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: 80px;
+}
+.hero::before {
+  content: "東京"; position: absolute;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 32vw; font-weight: 900;
+  color: rgba(200,16,46,0.08);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  white-space: nowrap; pointer-events: none;
+}
+.sakura {
+  position: absolute; pointer-events: none;
+  font-size: 24px; opacity: 0.3;
+  animation: fall 10s linear infinite;
+}
+@keyframes fall {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.5; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 60px; align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(200,16,46,0.15);
+  border: 1px solid var(--red);
+  padding: 8px 18px; border-radius: 30px;
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red-light);
+  margin-bottom: 26px;
+}
+.hero-badge::before { content: "●"; color: var(--red-light); }
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.hero h1 .red { color: var(--red-light); display: block; }
+.hero h1 .small { font-size: 0.4em; letter-spacing: 8px; display: block; color: #ccc; font-weight: 300; font-family: 'Poppins', sans-serif; margin-top: 14px; }
+.hero p.tagline {
+  font-size: 18px; color: #d0d0d0;
+  max-width: 520px; margin-bottom: 32px;
+  line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px; border-radius: 40px;
+  text-decoration: none; font-weight: 600;
+  letter-spacing: 1px; font-size: 14px; text-transform: uppercase;
+  transition: all 0.3s; border: 2px solid transparent;
+  cursor: pointer;
+}
+.btn-primary { background: var(--red); color: #fff; }
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(200,16,46,0.4); }
+.btn-outline { border-color: #fff; color: #fff; background: transparent; }
+.btn-outline:hover { background: #fff; color: var(--black); }
+
+/* Hero logo display */
+.hero-logo-wrap {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 480px;
+}
+.logo-big {
+  width: 420px; height: 420px; max-width: 90vw; max-height: 90vw;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e63946, #8b0a20 70%, #5c0616);
+  box-shadow: 0 20px 80px rgba(200,16,46,0.5), 0 0 0 6px rgba(255,255,255,0.1), 0 0 0 12px rgba(200,16,46,0.2);
+  animation: pulse 4s ease-in-out infinite;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+.logo-content {
+  text-align: center; color: #fff; position: relative; z-index: 3;
+  padding: 40px;
+}
+.logo-content .top-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px; letter-spacing: 4px;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+.logo-torii {
+  font-size: 110px; line-height: 1; color: #111;
+  text-shadow: 2px 2px 8px rgba(255,255,255,0.3);
+  margin: 8px 0;
+}
+.logo-content .bottom-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 3px;
+  margin-top: 18px;
+  border-top: 2px solid rgba(255,255,255,0.4);
+  padding-top: 14px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+.sakura-deco {
+  position: absolute; font-size: 28px;
+}
+.sakura-deco.s1 { top: 18%; left: 12%; }
+.sakura-deco.s2 { top: 22%; right: 14%; }
+.sakura-deco.s3 { bottom: 18%; left: 20%; }
+
+/* Floating info badges */
+.float-badge {
+  position: absolute;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 14px 20px; border-radius: 16px;
+  display: flex; align-items: center; gap: 12px;
+  animation: float 4s ease-in-out infinite;
+}
+.float-badge.f1 { top: 8%; right: 0; animation-delay: 0s; }
+.float-badge.f2 { bottom: 10%; left: -20px; animation-delay: 1.5s; }
+.float-badge .icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--red); display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.float-badge .text { font-size: 13px; color: #fff; }
+.float-badge .text strong { display: block; font-size: 15px; color: var(--red-light); }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ---------- SECTION BASE ---------- */
+section { padding: 100px 0; position: relative; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--red); font-size: 13px; letter-spacing: 4px;
+  text-transform: uppercase; font-weight: 600;
+  margin-bottom: 16px;
+}
+.section-tag::before, .section-tag::after {
+  content: ""; width: 30px; height: 1px; background: var(--red);
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: 2px; line-height: 1;
+  margin-bottom: 20px;
+}
+.section-title .jp {
+  display: block; font-family: 'Noto Serif JP', serif;
+  font-size: 0.3em; color: var(--red); letter-spacing: 8px;
+  margin-top: 10px; font-weight: 700;
+}
+.section-sub {
+  max-width: 620px; color: #c0c0c0;
+  line-height: 1.8; font-size: 16px;
+}
+.center { text-align: center; }
+.center .section-tag { justify-content: center; }
+.center .section-sub { margin: 0 auto; }
+
+/* ---------- ABOUT (Snow's story) ---------- */
+.about {
+  background: linear-gradient(180deg, #0d0d0d 0%, #161616 100%);
+  position: relative;
+}
+.about::before {
+  content: "物語"; position: absolute;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20vw; font-weight: 900;
+  color: rgba(200,16,46,0.04);
+  top: 50%; right: -5%; transform: translateY(-50%);
+  pointer-events: none;
+}
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 70px; align-items: center;
+}
+.about-photo-wrap {
+  position: relative;
+}
+.about-photo {
+  width: 100%; aspect-ratio: 4/5;
+  background:
+    linear-gradient(135deg, rgba(200,16,46,0.3), rgba(13,13,13,0.7)),
+    radial-gradient(circle at 30% 40%, #e6a5b4, #8b4a58);
+  border-radius: 8px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.about-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  z-index: 0;
+}
+.about-photo.has-image::before { display: none; }
+.about-photo::before {
+  content: "❅"; font-size: 140px;
+  color: rgba(255,255,255,0.9);
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.about-photo::after {
+  content: "Snow"; position: absolute;
+  bottom: 40px; font-family: 'Shippori Mincho', serif;
+  font-size: 42px; font-weight: 900;
+  color: #fff; letter-spacing: 6px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.about-frame {
+  position: absolute; top: 30px; left: 30px;
+  width: 100%; height: 100%;
+  border: 3px solid var(--red);
+  border-radius: 8px; z-index: -1;
+}
+.about-quote {
+  position: absolute; bottom: -40px; right: -30px;
+  background: var(--red); color: #fff;
+  padding: 24px 30px; border-radius: 8px;
+  max-width: 260px;
+  box-shadow: 0 20px 50px rgba(200,16,46,0.4);
+}
+.about-quote::before {
+  content: "“"; font-family: 'Shippori Mincho', serif;
+  font-size: 80px; line-height: 0.5;
+  position: absolute; top: 22px; left: 12px;
+  opacity: 0.4;
+}
+.about-quote p { font-style: italic; font-size: 15px; padding-left: 20px; line-height: 1.5; }
+.about-quote .author { margin-top: 10px; font-size: 12px; letter-spacing: 2px; padding-left: 20px; opacity: 0.9; }
+
+.about-content h2 { color: #fff; }
+.story-text { margin-top: 30px; }
+.story-text p {
+  color: #cfcfcf; margin-bottom: 18px;
+  font-size: 16px; line-height: 1.85;
+}
+.story-text p .highlight { color: var(--red-light); font-weight: 600; }
+.story-text p .big {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 22px; color: #fff;
+  display: block; margin: 20px 0; line-height: 1.5;
+  border-left: 3px solid var(--red);
+  padding-left: 20px;
+}
+.story-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.stat { text-align: center; }
+.stat .num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px; color: var(--red-light);
+  line-height: 1;
+}
+.stat .label { font-size: 12px; letter-spacing: 2px; color: #999; text-transform: uppercase; margin-top: 6px; }
+
+/* ---------- MENU ---------- */
+.menu {
+  background: linear-gradient(180deg, #161616 0%, #0d0d0d 100%);
+  position: relative;
+}
+.menu::before {
+  content: "メニュー"; position: absolute;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18vw; font-weight: 900;
+  color: rgba(200,16,46,0.04);
+  top: 80px; left: -8%;
+  pointer-events: none;
+}
+.menu-tabs {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  margin: 50px 0;
+}
+.tab-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: #ccc; padding: 12px 26px; border-radius: 30px;
+  font-family: 'Poppins', sans-serif; font-size: 13px;
+  font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.3s;
+}
+.tab-btn:hover { border-color: var(--red); color: #fff; }
+.tab-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+
+.menu-panel { display: none; animation: fadein 0.5s ease; }
+.menu-panel.active { display: block; }
+@keyframes fadein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.panel-header {
+  text-align: center; margin-bottom: 30px;
+}
+.panel-header h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; letter-spacing: 3px; color: #fff;
+}
+.panel-header p { color: #999; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; }
+
+.menu-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.menu-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+  transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.menu-item:hover {
+  background: rgba(200,16,46,0.08);
+  border-color: var(--red);
+  transform: translateY(-4px);
+}
+.menu-item::before {
+  content: ""; position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%; background: var(--red);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 0.3s;
+}
+.menu-item:hover::before { transform: scaleY(1); }
+.item-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(200,16,46,0.3);
+}
+.item-body { flex: 1; }
+.item-title-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 10px; margin-bottom: 4px;
+}
+.item-name { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1.5px; color: #fff; }
+.item-price { font-family: 'Bebas Neue', sans-serif; color: var(--red-light); font-size: 22px; white-space: nowrap; }
+.item-desc { font-size: 13px; color: #999; line-height: 1.5; }
+
+/* Featured dishes in entrees */
+.featured-dishes {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px; margin-bottom: 40px;
+}
+.dish-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; overflow: hidden;
+  transition: all 0.3s;
+}
+.dish-card:hover { transform: translateY(-6px); border-color: var(--red); }
+.dish-img {
+  height: 220px; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #2a1510, #4a1f18);
+  display: flex; align-items: center; justify-content: center;
+}
+.dish-img .plate {
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #f4e4d7 0%, #e0c9b0 60%, #c0a080 100%);
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.3);
+}
+.dish-img .plate > div {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+}
+.dish-img .plate .rice { background: radial-gradient(ellipse, #d4a574, #a67c4b); }
+.dish-img .plate .meat { background: radial-gradient(ellipse, #8b4513, #3d1a05); }
+.dish-img .plate .veg { background: radial-gradient(ellipse, #556b2f, #2d3b12); }
+.dish-img .plate .seafood { background: radial-gradient(ellipse, #ffb07a, #c8804e); }
+.dish-img .badge {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--red); color: #fff;
+  padding: 6px 12px; border-radius: 20px;
+  font-size: 11px; letter-spacing: 1px; font-weight: 600;
+}
+.dish-info { padding: 20px; }
+.dish-info h4 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1.5px; color: #fff; margin-bottom: 6px; }
+.dish-info .with { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.dish-info .price { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--red-light); }
+
+.includes-note {
+  text-align: center; margin-bottom: 40px;
+  padding: 16px 24px;
+  background: rgba(200,16,46,0.08);
+  border: 1px dashed rgba(200,16,46,0.3);
+  border-radius: 12px;
+  color: #d0d0d0; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+}
+.includes-note strong { color: var(--red-light); }
+
+/* BOBA section */
+.boba-hero {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 50px; align-items: center;
+  margin-bottom: 50px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(200,16,46,0.1), rgba(212,160,23,0.08));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+}
+.boba-cups {
+  display: flex; justify-content: center; align-items: flex-end; gap: 12px;
+}
+.cup {
+  width: 80px; height: 140px;
+  border-radius: 6px 6px 20px 20px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.cup::before {
+  content: ""; position: absolute;
+  top: -8px; left: -6px; right: -6px; height: 14px;
+  background: #fff; border-radius: 10px;
+}
+.cup::after {
+  content: ""; position: absolute;
+  top: -20px; right: 15px;
+  width: 6px; height: 40px;
+  background: #fff; border-radius: 3px;
+  transform: rotate(15deg);
+}
+.cup.milktea { background: linear-gradient(180deg, #8b6f47 0%, #6b4e2e 70%, #2d1e0f 100%); }
+.cup.fruit { background: linear-gradient(180deg, #ff6b9d 0%, #c94575 70%, #8b2a52 100%); }
+.cup.slushie { background: linear-gradient(180deg, #7dd3fc 0%, #0ea5e9 70%, #075985 100%); }
+.boba-hero-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px; letter-spacing: 3px; color: #fff;
+  margin-bottom: 14px;
+}
+.boba-hero-text p { color: #ccc; font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
+.boba-steps {
+  display: flex; gap: 20px; margin-top: 20px;
+}
+.boba-step {
+  flex: 1; text-align: center;
+  padding: 16px; background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+.boba-step .num {
+  font-family: 'Bebas Neue', sans-serif;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--red); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 8px;
+  font-size: 18px;
+}
+.boba-step .label { font-size: 12px; letter-spacing: 2px; color: #fff; text-transform: uppercase; }
+
+.boba-columns {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.boba-col {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 28px;
+}
+.boba-col h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 2px; color: var(--red-light);
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 2px solid rgba(200,16,46,0.3);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.boba-col h4 .count { font-family: 'Poppins', sans-serif; font-size: 12px; letter-spacing: 1.5px; color: #888; }
+.boba-list {
+  columns: 2; column-gap: 20px;
+  list-style: none;
+}
+.boba-list li {
+  font-size: 13px; color: #ccc;
+  padding: 4px 0;
+  break-inside: avoid;
+}
+.boba-list li::before { content: "◆ "; color: var(--red); font-size: 10px; }
+
+/* Catering */
+.catering-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.catering-card {
+  background: linear-gradient(135deg, rgba(200,16,46,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(200,16,46,0.2);
+  border-radius: 16px; padding: 30px;
+  transition: all 0.3s;
+}
+.catering-card:hover { transform: translateY(-6px); border-color: var(--red); }
+.catering-card h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; letter-spacing: 2px; color: #fff;
+  margin-bottom: 4px;
+}
+.catering-card .subtitle { color: #999; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.catering-tiers { list-style: none; }
+.catering-tiers li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.1);
+  color: #ccc; font-size: 14px;
+}
+.catering-tiers li:last-child { border: none; }
+.catering-tiers li .qty { font-weight: 600; color: #fff; }
+.catering-tiers li .price { font-family: 'Bebas Neue', sans-serif; color: var(--red-light); font-size: 18px; letter-spacing: 1px; }
+
+/* ---------- GALLERY / ALBUM ---------- */
+.gallery { background: #0d0d0d; position: relative; }
+.gallery::before {
+  content: "写真"; position: absolute;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20vw; font-weight: 900;
+  color: rgba(200,16,46,0.04);
+  top: 80px; right: -5%;
+  pointer-events: none;
+}
+.album-filter {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  margin: 40px 0 50px;
+}
+.filter-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: #ccc; padding: 10px 22px; border-radius: 30px;
+  font-family: 'Poppins', sans-serif; font-size: 12px;
+  font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.3s;
+}
+.filter-btn:hover { border-color: var(--red); color: #fff; }
+.filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+
+.album {
+  columns: 4;
+  column-gap: 14px;
+}
+.album-item {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+  display: block;
+}
+.album-item:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(200,16,46,0.3); }
+.album-photo {
+  width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  background: #1a1a1a;
+}
+.album-photo.real {
+  height: auto !important; background: #1a1a1a !important;
+}
+.album-photo.real img {
+  width: 100%; height: auto; display: block;
+}
+.album-photo.real .emoji { display: none; }
+.album-photo.real .placeholder-label { display: none; }
+.album-photo .emoji {
+  font-size: 70px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  opacity: 0.85;
+}
+.album-photo .placeholder-label {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);
+  color: #fff; font-size: 9px; letter-spacing: 1.5px;
+  padding: 4px 8px; border-radius: 4px;
+  text-transform: uppercase;
+}
+/* Different heights + colors */
+.album-photo.t-steak { height: 340px; background: linear-gradient(135deg, #8b4513 0%, #2d1a0a 100%); }
+.album-photo.t-boba { height: 280px; background: linear-gradient(135deg, #d4a574 0%, #6b4e2e 100%); }
+.album-photo.t-shrimp { height: 300px; background: linear-gradient(135deg, #ff9a56 0%, #c85a28 100%); }
+.album-photo.t-interior { height: 220px; background: linear-gradient(135deg, #2a2a2a 0%, #0d0d0d 100%); }
+.album-photo.t-dumplings { height: 260px; background: linear-gradient(135deg, #e0c090 0%, #8b6a3e 100%); }
+.album-photo.t-milktea { height: 320px; background: linear-gradient(135deg, #c9a98a 0%, #6d4d2e 100%); }
+.album-photo.t-fruittea { height: 270px; background: linear-gradient(135deg, #ff6b9d 0%, #8b2a52 100%); }
+.album-photo.t-slushie { height: 310px; background: linear-gradient(135deg, #7dd3fc 0%, #075985 100%); }
+.album-photo.t-hibachi { height: 290px; background: linear-gradient(135deg, #c8102e 0%, #5c0616 100%); }
+.album-photo.t-wings { height: 240px; background: linear-gradient(135deg, #e8b979 0%, #8b4513 100%); }
+.album-photo.t-rolls { height: 300px; background: linear-gradient(135deg, #d4a574 0%, #7a4a20 100%); }
+.album-photo.t-logo { height: 260px; background: radial-gradient(circle at 30% 30%, #e63946, #5c0616); }
+
+.album-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 16px 16px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.9));
+  color: #fff;
+  opacity: 0; transform: translateY(10px);
+  transition: all 0.3s;
+}
+.album-item:hover .album-caption { opacity: 1; transform: translateY(0); }
+.album-caption h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px; letter-spacing: 2px;
+  margin-bottom: 3px;
+}
+.album-caption p {
+  font-size: 10px; letter-spacing: 1.5px; color: var(--red-light);
+  text-transform: uppercase;
+}
+
+.album-cta {
+  text-align: center; margin-top: 50px;
+  padding: 30px;
+  background: rgba(200,16,46,0.08);
+  border: 1px dashed rgba(200,16,46,0.3);
+  border-radius: 16px;
+}
+.album-cta h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 2px; color: #fff;
+  margin-bottom: 10px;
+}
+.album-cta p { color: #aaa; margin-bottom: 20px; font-size: 14px; }
+.album-cta .buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- CONTACT ---------- */
+.contact {
+  background: linear-gradient(180deg, #0d0d0d, #161616);
+  position: relative;
+}
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+.contact-info-block {
+  display: flex; gap: 20px; margin-bottom: 30px;
+  align-items: flex-start;
+}
+.contact-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; flex-shrink: 0;
+  box-shadow: 0 10px 25px rgba(200,16,46,0.3);
+}
+.contact-text h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px; letter-spacing: 3px; color: var(--red-light);
+  margin-bottom: 6px;
+}
+.contact-text p { color: #fff; font-size: 16px; line-height: 1.6; }
+.contact-text p a { color: #fff; text-decoration: none; }
+.contact-text p a:hover { color: var(--red-light); }
+
+.hours-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 30px;
+}
+.hours-box h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 3px; color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--red);
+  display: flex; align-items: center; gap: 12px;
+}
+.hours-list { list-style: none; }
+.hours-list li {
+  display: flex; justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+  color: #ccc; font-size: 14px;
+}
+.hours-list li:last-child { border: none; }
+.hours-list li.open .time { color: var(--red-light); font-weight: 600; }
+.hours-list li .day { letter-spacing: 1px; }
+
+.map-wrap {
+  background: linear-gradient(135deg, rgba(200,16,46,0.1), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  aspect-ratio: 4/5;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+.map-pin {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; color: #fff;
+  box-shadow: 0 0 0 12px rgba(200,16,46,0.2), 0 0 0 24px rgba(200,16,46,0.1);
+  animation: ping 2s ease-in-out infinite;
+  margin-bottom: 24px;
+}
+@keyframes ping {
+  0%,100% { box-shadow: 0 0 0 12px rgba(200,16,46,0.2), 0 0 0 24px rgba(200,16,46,0.1); }
+  50% { box-shadow: 0 0 0 20px rgba(200,16,46,0.15), 0 0 0 40px rgba(200,16,46,0.05); }
+}
+.map-wrap h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 2px; color: #fff;
+  margin-bottom: 10px;
+}
+.map-wrap p { color: #ccc; font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
+.map-grid {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #050505;
+  border-top: 3px solid var(--red);
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand .nav-logo { margin-bottom: 20px; }
+.footer-brand p { color: #888; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+.socials { display: flex; gap: 12px; }
+.socials a {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; text-decoration: none;
+  transition: all 0.3s;
+}
+.socials a:hover { background: var(--red); border-color: var(--red); transform: translateY(-2px); }
+.footer-col h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 3px; color: #fff;
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  color: #999; text-decoration: none; font-size: 14px;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--red-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  color: #666; font-size: 13px;
+}
+.footer-bottom .jp { color: var(--red); letter-spacing: 3px; }
+
+/* ---------- MENU BOARD (authentic printed-menu style) ---------- */
+.menu-board {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(250,240,235,0.95) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><text x='10' y='100' font-family='serif' font-size='80' fill='%23f4c2c2' opacity='0.3'>🌸</text></svg>");
+  border-radius: 20px;
+  padding: 50px 50px 60px;
+  position: relative;
+  overflow: hidden;
+  color: #1a1a1a;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+.menu-board::before {
+  content: ""; position: absolute;
+  top: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(180deg, #fce4ec 0%, #f8d4e0 30%, transparent 100%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.menu-board::after {
+  content: "🗻"; position: absolute;
+  bottom: 40px; left: 50%; transform: translateX(-50%);
+  font-size: 200px; opacity: 0.08;
+  z-index: 0; pointer-events: none;
+}
+.menu-board .sakura-branch-tl, .menu-board .sakura-branch-tr {
+  position: absolute; top: 20px; font-size: 48px; opacity: 0.6; z-index: 1;
+}
+.menu-board .sakura-branch-tl { left: 30px; transform: rotate(-20deg); }
+.menu-board .sakura-branch-tr { right: 30px; transform: rotate(20deg); }
+.menu-board .logo-corner {
+  position: absolute; top: 30px; right: 30px;
+  width: 70px; height: 70px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e63946, #8b0a20);
+  display: flex; align-items: center; justify-content: center;
+  color: #111; font-size: 30px;
+  border: 2px solid #fff;
+  z-index: 2;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.board-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px; letter-spacing: 3px;
+  color: var(--red); margin-bottom: 6px;
+  position: relative; z-index: 2;
+  text-shadow: 2px 2px 0 rgba(200,16,46,0.15);
+}
+.board-subtitle {
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: #666; margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #1a1a1a;
+  position: relative; z-index: 2;
+}
+.board-list {
+  list-style: none; position: relative; z-index: 2;
+  margin-bottom: 30px;
+}
+.board-list li {
+  padding: 14px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+.board-list li:last-child { border-bottom: none; }
+.board-list li .row {
+  display: flex; align-items: baseline; gap: 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 1.5px;
+  color: #1a1a1a;
+}
+.board-list li .details {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px; color: #555;
+  margin-top: 6px; line-height: 1.55;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: italic;
+}
+.board-list li .name { white-space: nowrap; }
+.board-list li .desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px; letter-spacing: 0;
+  color: #666; font-weight: 400;
+  text-transform: none;
+  margin-left: 6px;
+}
+.board-list li .dots {
+  flex: 1; min-width: 30px;
+  border-bottom: 2px dotted #666;
+  margin-bottom: 6px;
+}
+.board-list li .price {
+  color: var(--red); font-weight: 700;
+  white-space: nowrap; font-size: 22px;
+}
+.board-grid-2 { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; position: relative; z-index: 2; }
+.board-photos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  align-content: start;
+}
+.board-photo {
+  aspect-ratio: 1/1; border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #f4e4d7 0%, #c0a080 70%, #8b6942 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25), inset 0 -6px 20px rgba(0,0,0,0.2);
+  position: relative;
+  border: 4px solid #fff;
+  font-size: 60px;
+  overflow: hidden;
+}
+.board-photo.p-steak { background: radial-gradient(circle at 40% 40%, #a67c4b, #4a2a18 75%); }
+.board-photo.p-shrimp { background: radial-gradient(circle at 40% 40%, #ffb07a, #8b3a1e 75%); }
+.board-photo.p-combo1 { background: radial-gradient(circle at 40% 40%, #c49a6c, #5c3a1e 75%); }
+.board-photo.p-combo2 { background: radial-gradient(circle at 40% 40%, #e6c49a, #8b5a2e 75%); }
+.board-photo.p-wings { background: radial-gradient(circle at 40% 40%, #e8b979, #8b4513 75%); }
+.board-photo.p-rolls { background: radial-gradient(circle at 40% 40%, #d4a574, #7a4a20 75%); }
+.board-photo.p-dumplings { background: radial-gradient(circle at 40% 40%, #e0c090, #8b6a3e 75%); }
+.board-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 50%;
+  position: absolute; top: 0; left: 0;
+}
+.board-photo.has-image { font-size: 0; background: #1a1a1a; }
+.board-photo-label {
+  position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10px; letter-spacing: 1.5px;
+  padding: 4px 10px; border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* Boba board */
+.boba-board {
+  background: linear-gradient(135deg, rgba(252,228,236,0.97), rgba(255,236,224,0.95));
+  color: #1a1a1a;
+  position: relative;
+}
+.boba-board::before { background: linear-gradient(180deg, #fce4ec 0%, transparent 100%); }
+.boba-board::after { content: none; }
+.boba-sakura-bg {
+  position: absolute; bottom: 0; right: 0; width: 280px; opacity: 0.25;
+  font-size: 280px; line-height: 1; pointer-events: none; z-index: 0;
+}
+.boba-tri {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+  position: relative; z-index: 2;
+  margin-bottom: 40px;
+}
+.boba-tri-col h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 3px; color: var(--red);
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 10px; margin-bottom: 14px;
+}
+.boba-tri-col h4 .step {
+  background: var(--red); color: #fff;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.boba-tri-col .sub-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; color: #1a1a1a; letter-spacing: 2px;
+  margin: 14px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(0,0,0,0.3);
+}
+.boba-tri-col ul {
+  list-style: none; column-count: 1;
+}
+.boba-tri-col ul li {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px; letter-spacing: 1.2px;
+  color: #1a1a1a; padding: 3px 0;
+}
+.boba-price-tags {
+  display: flex; justify-content: center; gap: 20px;
+  position: relative; z-index: 2;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.price-tag {
+  background: #fff;
+  border: 2px solid var(--red);
+  border-radius: 30px;
+  padding: 12px 26px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 0 8px 20px rgba(200,16,46,0.2);
+}
+.price-tag .label { color: #1a1a1a; font-size: 16px; }
+.price-tag .val { color: var(--red); font-size: 22px; }
+
+/* Boba cup illustrations in header */
+.boba-cups-row {
+  display: flex; justify-content: center; gap: 30px;
+  position: relative; z-index: 2;
+  margin-bottom: 30px;
+}
+
+/* Side orders / snacks dark theme (like printed menu image 2) */
+.menu-board.dark-board {
+  background:
+    linear-gradient(180deg, rgba(252,228,236,0.96) 0%, rgba(178,202,227,0.92) 100%);
+}
+.menu-board.dark-board::before {
+  background: linear-gradient(180deg, #fce4ec 0%, transparent 100%);
+}
+
+.board-split {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 30px;
+  position: relative; z-index: 2;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero-inner, .about-grid, .contact-grid, .boba-hero { grid-template-columns: 1fr; }
+  .boba-columns { grid-template-columns: 1fr; }
+  .album { columns: 2; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .story-stats { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .stat .num { font-size: 32px; }
+  .nav-links { position: fixed; top: 70px; right: -100%; flex-direction: column; background: rgba(13,13,13,0.98); width: 260px; height: calc(100vh - 70px); padding: 40px 30px; align-items: flex-start; transition: right 0.3s; border-left: 2px solid var(--red); }
+  .nav-links.open { right: 0; }
+  .hamburger { display: flex; }
+  .logo-big { width: 300px; height: 300px; }
+  .logo-content .top-text { font-size: 24px; }
+  .logo-torii { font-size: 80px; }
+  .about-quote { position: static; margin-top: 30px; max-width: 100%; }
+  .boba-steps { flex-direction: column; }
+  .hero-logo-wrap { min-height: 360px; }
+  .float-badge { display: none; }
+}
+@media (max-width: 600px) {
+  section { padding: 70px 0; }
+  .boba-list { columns: 1; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .story-stats { grid-template-columns: 1fr; }
+  .album { columns: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Falling sakura -->
+<div class="sakura" style="left: 10%; animation-delay: 0s;">🌸</div>
+<div class="sakura" style="left: 30%; animation-delay: 3s;">🌸</div>
+<div class="sakura" style="left: 55%; animation-delay: 6s;">🌸</div>
+<div class="sakura" style="left: 80%; animation-delay: 2s;">🌸</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-circle"></div>
+      <div class="nav-logo-text">TOKYO EXPRESS<span>Hibachi & Boba</span></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Visit</a>
+      <a href="tel:3367072536" class="nav-cta">Order Now</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge">Authentic Japanese Flavor · Greensboro, NC</div>
+        <h1>
+          Sizzling Hibachi.
+          <span class="red">Handcrafted Boba.</span>
+          <span class="small">東京エクスプレス</span>
+        </h1>
+        <p class="tagline">
+          Where traditional hibachi meets refreshing boba tea. Every plate tells a story —
+          freshly seared steak, jumbo shrimp, fluffy fried rice, and sweet hibachi sauce,
+          paired with your favorite milk tea, fruit tea, or slushie.
+        </p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">View Menu →</a>
+          <a href="tel:3367072536" class="btn btn-outline">📞 336-707-2536</a>
+        </div>
+      </div>
+      <div class="hero-logo-wrap">
+        <div class="float-badge f1">
+          <div class="icon">⭐</div>
+          <div class="text"><strong>4.8/5</strong>Loved by Greensboro</div>
+        </div>
+        <div class="logo-big">
+          <div class="sakura-deco s1">🌸</div>
+          <div class="sakura-deco s2">🌸</div>
+          <div class="sakura-deco s3">🌸</div>
+          <div class="logo-content">
+            <div class="top-text">TOKYO EXPRESS</div>
+            <div class="logo-torii">⛩</div>
+            <div class="bottom-text">HIBACHI AND BOBA</div>
+          </div>
+        </div>
+        <div class="float-badge f2">
+          <div class="icon">🍱</div>
+          <div class="text"><strong>40+ Dishes</strong>Hibachi · Combos · Boba</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / STORY -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-frame"></div>
+        <div class="about-photo has-image">
+          <img src="images/signature-trio.jpg" alt="Snow's signature hibachi trio">
+        </div>
+        <div class="about-quote">
+          <p>A little college dream, now served fresh every day.</p>
+          <div class="author">— SNOW, FOUNDER</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">Meet Snow<span class="jp">私たちの物語</span></h2>
+        <div class="story-text">
+          <p>
+            Years ago, Snow was just a <span class="highlight">hard-working college student</span>,
+            juggling late-night shifts at a small boba tea shop to pay for tuition, books, and the life she
+            was building one cup at a time.
+          </p>
+          <p>
+            Between sealing cups and shaking milk tea, she held a quiet dream in her heart —
+            <span class="big">“One day, I'll have a boba shop of my own. A place that feels like home.”</span>
+          </p>
+          <p>
+            She didn't imagine that dream would grow <span class="highlight">even bigger</span>.
+            Today, that little wish has blossomed into <strong>Tokyo Express — Hibachi and Boba</strong>,
+            a place where the sizzle of a hibachi grill meets the happy pop of tapioca pearls.
+            Every plate we serve and every cup we shake is poured with the same spirit that started it all:
+            <em>hustle, heart, and a hope that a good meal can make someone's day a little brighter.</em>
+          </p>
+          <p>
+            Whether you're stopping in for a quick lunch between classes, bringing the family for dinner,
+            or catering your next big event — welcome. You're part of the story now.
+          </p>
+        </div>
+        <div class="story-stats">
+          <div class="stat"><div class="num">100%</div><div class="label">Fresh Daily</div></div>
+          <div class="stat"><div class="num">40+</div><div class="label">Boba Flavors</div></div>
+          <div class="stat"><div class="num">1</div><div class="label">Big Dream</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="center">
+      <div class="section-tag">Our Menu</div>
+      <h2 class="section-title">Crafted With Care<span class="jp">お品書き</span></h2>
+      <p class="section-sub">Traditional hibachi classics, crowd-favorite combos, and a full boba bar — all under one roof.</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-tab="entrees">🍱 Entrees</button>
+      <button class="tab-btn" data-tab="combos">🔥 Combination Plates</button>
+      <button class="tab-btn" data-tab="sides">🥢 Side Orders</button>
+      <button class="tab-btn" data-tab="snacks">🍤 Snacks</button>
+      <button class="tab-btn" data-tab="boba">🧋 Boba & Drinks</button>
+      <button class="tab-btn" data-tab="catering">🎉 Catering</button>
+    </div>
+
+    <!-- ENTREES -->
+    <div class="menu-panel active" id="panel-entrees">
+      <div class="menu-board">
+        <span class="sakura-branch-tl">🌸</span>
+        <span class="sakura-branch-tr">🌸</span>
+        <div class="logo-corner">⛩</div>
+
+        <div class="board-grid-2">
+          <div>
+            <h3 class="board-title">ENTREES</h3>
+            <div class="board-subtitle">Includes fried rice, sweet carrots, and white sauce</div>
+            <ul class="board-list">
+              <li>
+                <div class="row"><span class="name">Hibachi Vegetables</span><span class="dots"></span><span class="price">$8.99</span></div>
+                <div class="details">A garden-fresh mix of zucchini, onions, mushrooms, broccoli, and sweet carrots seared on our flat-top grill with a splash of soy, garlic butter, and sesame oil. Served over fluffy fried rice with our signature white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Teriyaki Chicken</span><span class="desc">with broccoli</span><span class="dots"></span><span class="price">$9.75</span></div>
+                <div class="details">Juicy, bite-sized chicken glazed in our house-made teriyaki — sweet, savory, and slightly smoky. Paired with tender broccoli, fried rice, sweet carrots, and white sauce for dipping.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Hibachi Chicken</span><span class="desc">with mushrooms</span><span class="dots"></span><span class="price">$9.75</span></div>
+                <div class="details">Classic hibachi-style chicken thigh, seared with garlic butter, soy, and sesame until golden. Served with earthy sauteed mushrooms, fried rice, sweet carrots, and white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Teriyaki Steak</span><span class="desc">with broccoli</span><span class="dots"></span><span class="price">$10.75</span></div>
+                <div class="details">Tender sirloin cubes glazed in sweet teriyaki, caramelized on the flat-top for that perfect sticky char. Served with crisp broccoli, fried rice, sweet carrots, and white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Hibachi Steak</span><span class="desc">with mushrooms</span><span class="dots"></span><span class="price">$10.75</span></div>
+                <div class="details">Hand-sliced sirloin steak seared hot and fast with garlic butter, soy, and sesame. Finished with savory mushrooms and served over fried rice with sweet carrots and our white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Hibachi Shrimp</span><span class="desc">with broccoli</span><span class="dots"></span><span class="price">$10.75</span></div>
+                <div class="details">Plump, deveined shrimp seared in garlic butter until tender and lightly caramelized. Plated with steamed broccoli, fried rice, sweet carrots, and our creamy white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Hibachi Fish</span><span class="desc">(salmon/tilapia) with broccoli</span><span class="dots"></span><span class="price">$11.50</span></div>
+                <div class="details">Your choice of flaky salmon or tilapia, seared with lemon butter and a touch of soy. Served with broccoli, fried rice, sweet carrots, and white sauce on the side.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Hibachi Scallops</span><span class="desc">with broccoli</span><span class="dots"></span><span class="price">$11.50</span></div>
+                <div class="details">Sweet, buttery jumbo scallops seared to a golden crust while staying tender inside. Paired with broccoli, fried rice, sweet carrots, and white sauce. A house favorite.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="board-photos">
+            <div class="board-photo has-image"><img src="images/hibachi-steak.jpg" alt="Hibachi Steak"><div class="board-photo-label">Hibachi Steak</div></div>
+            <div class="board-photo has-image"><img src="images/hibachi-shrimp.jpg" alt="Hibachi Shrimp"><div class="board-photo-label">Hibachi Shrimp</div></div>
+            <div class="board-photo has-image"><img src="images/hibachi-chicken.jpg" alt="Hibachi Chicken"><div class="board-photo-label">Hibachi Chicken</div></div>
+            <div class="board-photo has-image"><img src="images/hibachi-scallops.jpg" alt="Hibachi Scallops"><div class="board-photo-label">Hibachi Scallops</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMBOS -->
+    <div class="menu-panel" id="panel-combos">
+      <div class="menu-board">
+        <span class="sakura-branch-tl">🌸</span>
+        <span class="sakura-branch-tr">🌸</span>
+        <div class="logo-corner">⛩</div>
+
+        <div class="board-grid-2">
+          <div>
+            <h3 class="board-title">COMBINATION PLATES</h3>
+            <div class="board-subtitle">Includes fried rice, sweet carrots, and white sauce</div>
+            <ul class="board-list">
+              <li>
+                <div class="row"><span class="name">Steak & Chicken</span><span class="desc">with mushrooms</span><span class="dots"></span><span class="price">$13.99</span></div>
+                <div class="details">The perfect surf-and-turf swap — seared sirloin steak and hibachi chicken with savory mushrooms. Comes with fried rice, sweet carrots, and white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Shrimp & Chicken</span><span class="desc">with broccoli & mushrooms</span><span class="dots"></span><span class="price">$13.99</span></div>
+                <div class="details">Juicy garlic-butter shrimp and tender hibachi chicken, paired with broccoli and mushrooms. Fried rice, sweet carrots, and white sauce included.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Chicken & Scallops</span><span class="desc">with broccoli & mushrooms</span><span class="dots"></span><span class="price">$14.99</span></div>
+                <div class="details">Hibachi chicken meets sweet, caramelized scallops for a rich, balanced plate. Served with broccoli, mushrooms, fried rice, sweet carrots, and white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Steak & Shrimp</span><span class="desc">with broccoli & mushrooms</span><span class="dots"></span><span class="price">$14.99</span></div>
+                <div class="details">Our #1 combo. Seared sirloin steak and jumbo shrimp hit the hot flat-top together, finished with broccoli and mushrooms. Includes fried rice, sweet carrots, and white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Steak & Scallops</span><span class="desc">with broccoli & mushrooms</span><span class="dots"></span><span class="price">$15.99</span></div>
+                <div class="details">A premium pairing — buttery sirloin steak with sweet, seared scallops. Broccoli, mushrooms, fried rice, sweet carrots, and white sauce round out the plate.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Shrimp & Scallops</span><span class="desc">with broccoli</span><span class="dots"></span><span class="price">$15.99</span></div>
+                <div class="details">For the seafood lover — jumbo shrimp and golden-seared scallops over fried rice with crisp broccoli, sweet carrots, and white sauce. Light, sweet, and satisfying.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="board-photos">
+            <div class="board-photo has-image"><img src="images/steak-shrimp-combo.jpg" alt="Steak & Shrimp"><div class="board-photo-label">Steak & Shrimp</div></div>
+            <div class="board-photo has-image"><img src="images/shrimp-closeup.jpg" alt="Shrimp & Scallops"><div class="board-photo-label">Shrimp & Scallops</div></div>
+            <div class="board-photo has-image"><img src="images/steak-chicken-combo.jpg" alt="Steak & Chicken"><div class="board-photo-label">Steak & Chicken</div></div>
+            <div class="board-photo has-image"><img src="images/chicken-mushroom.jpg" alt="Chicken & Scallops"><div class="board-photo-label">Chicken & Scallops</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDES -->
+    <div class="menu-panel" id="panel-sides">
+      <div class="menu-board dark-board">
+        <span class="sakura-branch-tl">🌸</span>
+        <span class="sakura-branch-tr">🌸</span>
+        <div class="logo-corner">⛩</div>
+
+        <div class="board-split">
+          <div>
+            <h3 class="board-title">SIDE ORDERS</h3>
+            <div class="board-subtitle">À la carte favorites</div>
+            <ul class="board-list">
+              <li>
+                <div class="row"><span class="name">Egg Roll</span><span class="dots"></span><span class="price">$1.99</span></div>
+                <div class="details">One golden, crispy egg roll filled with savory seasoned veggies and cabbage — perfect with a dip of sweet chili or white sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Fried Rice</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">Our signature fried rice — tossed with egg, green onions, garlic butter, and a whisper of soy on the flat-top. Fluffy, savory, and always fresh.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Zucchini</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">Sliced zucchini seared with garlic butter and a splash of soy until tender on the inside, lightly caramelized on the outside.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Onions</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">Sweet white onions seared on the flat-top until golden, with a hint of sesame and soy. The classic hibachi side.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Sweet Carrots</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">Tender, buttery carrots glazed with a touch of honey — sweet, savory, and universally loved. Comes standard with most entrees too.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Sauteed Mushrooms</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">Earthy button mushrooms sauteed in garlic butter and soy until deeply flavorful. The perfect umami side.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Broccoli</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">Bright-green broccoli florets, lightly seared and seasoned to keep that fresh crunch. Great alone or as an add-on.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Salad</span><span class="dots"></span><span class="price">$3.99</span></div>
+                <div class="details">A fresh house salad with crisp lettuce, cucumber, tomato, and shredded carrots — topped with our house ginger dressing.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Zucchini & Onions</span><span class="dots"></span><span class="price">$5.09</span></div>
+                <div class="details">The best of both worlds — flat-top-seared zucchini and sweet onions in garlic butter and soy. A hearty veggie side.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Hibachi Noodles</span><span class="dots"></span><span class="price">$5.25</span></div>
+                <div class="details">Chewy lo mein-style noodles stir-fried with soy, garlic butter, sesame oil, and a hint of sweet. Can be swapped in for fried rice on any entree.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Chicken</span><span class="dots"></span><span class="price">$6.49</span></div>
+                <div class="details">A side portion of our hibachi chicken — perfect for pairing with noodles, salad, or adding to another plate.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Steak</span><span class="dots"></span><span class="price">$7.49</span></div>
+                <div class="details">A side of hand-sliced hibachi sirloin seared in garlic butter. Add protein to any plate or order it à la carte.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Shrimp</span><span class="dots"></span><span class="price">$7.49</span></div>
+                <div class="details">A side of plump, juicy hibachi shrimp — seared in garlic butter with a light touch of soy and sesame.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Fish</span><span class="desc">(salmon/tilapia)</span><span class="dots"></span><span class="price">$8.75</span></div>
+                <div class="details">A side portion of flaky salmon or tilapia seared with lemon butter. Light, clean, and protein-packed.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Scallop</span><span class="dots"></span><span class="price">$8.75</span></div>
+                <div class="details">A side of golden-seared jumbo scallops — sweet, buttery, and cooked just until tender.</div>
+              </li>
+            </ul>
+
+            <h3 class="board-title" style="margin-top:30px;">SNACKS</h3>
+            <div class="board-subtitle">Bites to share</div>
+            <ul class="board-list">
+              <li>
+                <div class="row"><span class="name">Dumplings</span><span class="desc">(chicken/pork/veggie) · 6 pieces</span><span class="dots"></span><span class="price">$5.00</span></div>
+                <div class="details">Hand-folded dumplings with your choice of chicken, pork, or veggie filling — pan-seared on the bottom for a crispy-bottom, tender-top bite. Served with our house dipping sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Shrimp Rolls</span><span class="desc">6 pieces</span><span class="dots"></span><span class="price">$5.00</span></div>
+                <div class="details">Golden-fried rolls packed with seasoned shrimp and veggies in a crispy wrap. Perfect dipped in sweet chili sauce.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Chicken Wings</span><span class="desc">4 pieces</span><span class="dots"></span><span class="price">$5.00</span></div>
+                <div class="details">Four jumbo wings — crispy outside, juicy inside — seasoned with our house blend. Clean, bold, no fuss.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Sesame Wings</span><span class="desc">4 pieces</span><span class="dots"></span><span class="price">$5.75</span></div>
+                <div class="details">Our signature crispy wings tossed in a sticky-sweet sesame glaze and finished with toasted sesame seeds. Sweet, savory, and impossible to stop eating.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="board-photos" style="grid-template-columns:1fr; align-content:center; gap:26px;">
+            <div class="board-photo has-image"><img src="images/broccoli.jpg" alt="Fresh Broccoli"><div class="board-photo-label">Broccoli</div></div>
+            <div class="board-photo has-image"><img src="images/salad.jpg" alt="Fresh Salad"><div class="board-photo-label">Salad</div></div>
+            <div class="board-photo has-image"><img src="images/shrimp-side.jpg" alt="Shrimp Side"><div class="board-photo-label">Shrimp</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNACKS (standalone, same printed-menu look) -->
+    <div class="menu-panel" id="panel-snacks">
+      <div class="menu-board dark-board">
+        <span class="sakura-branch-tl">🌸</span>
+        <span class="sakura-branch-tr">🌸</span>
+        <div class="logo-corner">⛩</div>
+
+        <div class="board-grid-2">
+          <div>
+            <h3 class="board-title">SNACKS</h3>
+            <div class="board-subtitle">Bite-sized happiness</div>
+            <ul class="board-list">
+              <li>
+                <div class="row"><span class="name">Dumplings</span><span class="desc">(chicken/pork/veggie) · 6 pieces</span><span class="dots"></span><span class="price">$5.00</span></div>
+                <div class="details">Six hand-folded dumplings with your choice of seasoned chicken, pork, or mixed veggie filling. Pan-seared crispy on the bottom, pillowy on top, and served with our signature dipping sauce — a little soy, a little vinegar, a kick of chili oil.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Shrimp Rolls</span><span class="desc">6 pieces</span><span class="dots"></span><span class="price">$5.00</span></div>
+                <div class="details">Six golden, crispy rolls packed with seasoned shrimp and veggies — fried to order so they stay shatter-crisp. Perfect with sweet chili sauce on the side.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Chicken Wings</span><span class="desc">4 pieces</span><span class="dots"></span><span class="price">$5.00</span></div>
+                <div class="details">Four jumbo wings double-fried for that extra-crispy exterior and juicy, tender meat inside. Lightly seasoned with our house salt-and-garlic blend — simple and addictive.</div>
+              </li>
+              <li>
+                <div class="row"><span class="name">Sesame Wings</span><span class="desc">4 pieces</span><span class="dots"></span><span class="price">$5.75</span></div>
+                <div class="details">Our signature upgrade — crispy wings tossed in a sweet-savory sesame glaze with a hint of garlic and ginger, then finished with toasted sesame seeds and scallions.</div>
+              </li>
+            </ul>
+
+            <div style="margin-top:30px; padding:20px; background:rgba(200,16,46,0.08); border-left:4px solid var(--red); border-radius:8px;">
+              <p style="font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; color:var(--red); margin-bottom:6px;">🥠 Perfect for sharing</p>
+              <p style="font-size:13px; color:#555; line-height:1.6;">Pair any snack with your favorite boba for the ultimate afternoon treat. Crunchy, savory, and made fresh to order.</p>
+            </div>
+          </div>
+          <div class="board-photos">
+            <div class="board-photo p-wings">🍗<div class="board-photo-label">Chicken Wings</div></div>
+            <div class="board-photo has-image"><img src="images/shrimp-rolls.jpg" alt="Shrimp Rolls"><div class="board-photo-label">Shrimp Rolls</div></div>
+            <div class="board-photo p-dumplings">🥟<div class="board-photo-label">Dumplings</div></div>
+            <div class="board-photo p-wings">🌰<div class="board-photo-label">Sesame Wings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOBA -->
+    <div class="menu-panel" id="panel-boba">
+      <div class="menu-board boba-board">
+        <span class="boba-sakura-bg">🌸</span>
+        <div class="logo-corner">⛩</div>
+
+        <div class="boba-cups-row">
+          <div class="cup milktea"></div>
+          <div class="cup fruit"></div>
+          <div class="cup slushie"></div>
+        </div>
+
+        <div class="boba-price-tags">
+          <div class="price-tag"><span class="label">🧋 Milk Tea</span><span class="val">$5.95</span></div>
+          <div class="price-tag"><span class="label">🍹 Fruit Tea</span><span class="val">$5.95</span></div>
+          <div class="price-tag"><span class="label">🥤 Slushies</span><span class="val">$5.95</span></div>
+        </div>
+
+        <div style="text-align:center; margin:30px 0; font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:3px; color:#1a1a1a;">
+          BUILD YOUR BOBA · 3 EASY STEPS
+        </div>
+
+        <div class="boba-tri">
+          <div class="boba-tri-col">
+            <h4>BASE <span class="step">1</span></h4>
+            <div class="sub-title">Milk Tea <span style="font-size:11px; color:#666;">— comes with boba</span></div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Our creamy, hand-shaken milk teas — rich, smooth, and served with classic black tapioca boba. Pick your favorite flavor:</p>
+            <ul>
+              <li>Thai Tea</li><li>Rose</li><li>Taro</li><li>Matcha</li>
+              <li>Watermelon</li><li>Avocado</li><li>Green Apple</li>
+              <li>Peach</li><li>Tiramisu</li><li>Coconut</li>
+              <li>Strawberry</li><li>Mocha</li><li>Sesame</li><li>Lychee</li>
+            </ul>
+            <div class="sub-title">Fruit Tea</div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Refreshing, lightly sweetened teas brewed with real fruit — bright, clean, and caffeine-friendly.</p>
+            <ul>
+              <li>Super Fruit</li><li>Mango</li><li>Peach Lemonade</li>
+              <li>Lychee Oolong</li><li>Peach</li><li>Orange</li>
+              <li>Pineapple</li><li>Strawberry</li><li>Passionfruit</li>
+            </ul>
+            <div class="sub-title">Slushies</div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Ice-blended, dangerously sippable frozen drinks — perfect for hot days or sweet tooths.</p>
+            <ul>
+              <li>Mango</li><li>Strawberry</li><li>Peach</li>
+              <li>Pineapple</li><li>Passionfruit</li><li>Watermelon</li>
+            </ul>
+          </div>
+
+          <div class="boba-tri-col">
+            <h4>FLAVOR <span class="step">2</span></h4>
+            <div class="sub-title">Classic</div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">All-time favorites — familiar flavors that pair beautifully with milk tea or fruit tea bases.</p>
+            <ul>
+              <li>Honeydew</li><li>Chai</li><li>Lavender</li><li>Vanilla</li>
+              <li>Blueberry</li><li>Pineapple</li><li>Banana</li>
+              <li>Pumpkin Spice</li><li>Earl Grey</li><li>Coffee</li>
+              <li>Mango</li><li>Chocolate</li><li>Brown Sugar</li>
+            </ul>
+            <div class="sub-title">Signature</div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">House-crafted flavor twists you won't find anywhere else in Greensboro. Bold, fun, and absolutely worth trying.</p>
+            <ul>
+              <li>Green Apple</li><li>Honey Ginger</li>
+              <li>Pomegranate Passionfruit</li>
+              <li>Mango Strawberry Rose</li>
+              <li>Red Guava</li><li>Grapefruit</li>
+              <li>Honeydew</li><li>Sour Plum</li><li>Acai</li>
+            </ul>
+          </div>
+
+          <div class="boba-tri-col">
+            <h4>TOPPING <span class="step">3</span></h4>
+            <div class="sub-title">Jellies</div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Soft, bouncy fruit jellies and classic chewy tapioca boba — that satisfying texture you sip for.</p>
+            <ul>
+              <li>Tapioca Boba</li><li>Strawberry Jelly</li>
+              <li>Mango Jelly</li><li>Rainbow Jelly</li>
+              <li>Coffee Jelly</li><li>Passionfruit Jelly</li>
+              <li>Crystal Jelly</li><li>Lychee Jelly</li>
+              <li>Pineapple Jelly</li><li>Green Apple Jelly</li>
+            </ul>
+            <div class="sub-title">Popping Pops</div>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Fruit-filled pearls that burst with juice when you bite — like a little flavor firework in every sip.</p>
+            <ul>
+              <li>Raspberry Pops</li><li>Green Apple Pops</li>
+              <li>Lychee Pops</li><li>Kiwi Pops</li>
+              <li>Yogurt Pops</li><li>Mango Pops</li>
+              <li>Peach Pops</li><li>Passionfruit Pops</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATERING -->
+    <div class="menu-panel" id="panel-catering">
+      <div class="menu-board" style="background: linear-gradient(180deg, #c86a2e 0%, #8b4513 100%); color:#fff;">
+        <span class="sakura-branch-tl" style="opacity:0.9;">🌿</span>
+        <span class="sakura-branch-tr" style="opacity:0.9;">🌿</span>
+        <div class="logo-corner">⛩</div>
+
+        <h3 class="board-title" style="color:#fff; text-shadow:2px 2px 0 rgba(0,0,0,0.2);">CATERING MENU</h3>
+        <div class="board-subtitle" style="color:#ffe4c4; border-color:#fff;">3722 E. Battleground Ave · Greensboro, NC 27410 · 336-707-2536</div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px 60px; margin-top:30px; position:relative; z-index:2;">
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; color:#fff; margin-bottom:6px;">🥟 DUMPLINGS</div>
+            <div style="font-size:13px; color:#ffe4c4; margin-bottom:14px; letter-spacing:1.5px;">Pork · Chicken · Veggies</div>
+            <div style="font-size:13px; color:#fff; line-height:1.6; margin-bottom:16px; opacity:0.9;">Hand-folded and pan-seared to order — crispy bottoms, juicy insides. Choose one filling or mix and match. Comes with our signature dipping sauce.</div>
+            <ul class="board-list" style="color:#fff;">
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">25 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$22.50</span></div></li>
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">50 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$40.00</span></div></li>
+              <li style="color:#fff;"><div class="row"><span class="name" style="color:#fff;">100 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$75.00</span></div></li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; color:#fff; margin-bottom:6px;">🍤 SHRIMP ROLLS</div>
+            <div style="font-size:13px; color:#ffe4c4; margin-bottom:14px; letter-spacing:1.5px;">Crispy golden classic</div>
+            <div style="font-size:13px; color:#fff; line-height:1.6; margin-bottom:16px; opacity:0.9;">Golden-fried rolls packed with seasoned shrimp and veggies. Fried fresh before delivery so they stay shatter-crisp. Served with sweet chili sauce.</div>
+            <ul class="board-list" style="color:#fff;">
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">25 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$20.00</span></div></li>
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">50 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$37.50</span></div></li>
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">100 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$70.00</span></div></li>
+              <li style="color:#fff;"><div class="row"><span class="name" style="color:#fff;">150 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$100.00</span></div></li>
+            </ul>
+          </div>
+
+          <div style="grid-column: span 2;">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; color:#fff; margin-bottom:6px;">🍗 CHICKEN WINGS</div>
+            <div style="font-size:13px; color:#ffe4c4; margin-bottom:14px; letter-spacing:1.5px;">House-seasoned · juicy · crispy</div>
+            <div style="font-size:13px; color:#fff; line-height:1.6; margin-bottom:16px; opacity:0.9; max-width:600px;">Jumbo wings double-fried for maximum crunch, seasoned with our house garlic-salt blend. Upgrade to Sesame Wings for +$0.75 per 25 — tossed in our sweet sesame glaze with toasted sesame seeds.</div>
+            <ul class="board-list" style="color:#fff; columns:2; column-gap:50px;">
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">25 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$30.00</span></div></li>
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">50 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$55.00</span></div></li>
+              <li style="color:#fff; border-bottom-color:rgba(255,255,255,0.2);"><div class="row"><span class="name" style="color:#fff;">100 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$95.00</span></div></li>
+              <li style="color:#fff;"><div class="row"><span class="name" style="color:#fff;">150 for</span><span class="dots" style="border-color:#fff;"></span><span class="price" style="color:#fff;">$135.00</span></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:40px; padding:20px; background:rgba(255,255,255,0.15); border-radius:12px; position:relative; z-index:2;">
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:3px; color:#fff; margin-bottom:6px;">📞 CALL TO ORDER · 336-707-2536</p>
+          <p style="font-size:13px; color:#ffe4c4;">48-hour notice recommended for large orders · Delivery available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO ALBUM -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="center">
+      <div class="section-tag">Photo Album</div>
+      <h2 class="section-title">Sizzle & Sip<span class="jp">ギャラリー</span></h2>
+      <p class="section-sub">A little peek into what's sizzling on the grill and shaking in the cups — straight from our guests and our kitchen.</p>
+    </div>
+
+    <div class="album-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hibachi">🍱 Hibachi</button>
+      <button class="filter-btn" data-filter="boba">🧋 Boba</button>
+      <button class="filter-btn" data-filter="snacks">🍤 Snacks</button>
+      <button class="filter-btn" data-filter="vibe">⛩ The Vibe</button>
+    </div>
+
+    <div class="album" id="album">
+      <!-- Real photos live in /images/. Drinks items still use emoji placeholders
+           until we shoot boba/slushie photography. Drop-in format:
+           <div class="album-photo real"><img src="images/your-file.jpg" alt="..."></div>
+      -->
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/hibachi-steak.jpg" alt="Hibachi Steak"></div>
+        <div class="album-caption"><h5>Hibachi Steak</h5><p>Seared on the flat-top</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/signature-trio.jpg" alt="Signature Trio"></div>
+        <div class="album-caption"><h5>Signature Trio</h5><p>Steak · Shrimp · Chicken</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/hibachi-shrimp.jpg" alt="Hibachi Shrimp"></div>
+        <div class="album-caption"><h5>Hibachi Shrimp</h5><p>Jumbo & juicy</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/hibachi-scallops.jpg" alt="Hibachi Scallops"></div>
+        <div class="album-caption"><h5>Hibachi Scallops</h5><p>Tender · buttery · perfect sear</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="boba">
+        <div class="album-photo t-milktea">
+          <span class="emoji">🧋</span>
+          <div class="placeholder-label">Coming soon</div>
+        </div>
+        <div class="album-caption"><h5>Taro Milk Tea</h5><p>Classic with boba</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/steak-shrimp-combo.jpg" alt="Steak & Shrimp Combo"></div>
+        <div class="album-caption"><h5>Steak & Shrimp</h5><p>House favorite combo plate</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/hibachi-chicken.jpg" alt="Hibachi Chicken"></div>
+        <div class="album-caption"><h5>Hibachi Chicken</h5><p>Tender · savory · just right</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="boba">
+        <div class="album-photo t-fruittea">
+          <span class="emoji">🍹</span>
+          <div class="placeholder-label">Coming soon</div>
+        </div>
+        <div class="album-caption"><h5>Fruit Tea</h5><p>Real fruit · bright & fresh</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/teriyaki-chicken.jpg" alt="Teriyaki Chicken"></div>
+        <div class="album-caption"><h5>Teriyaki Chicken</h5><p>Glazed · glossy · craveable</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="snacks">
+        <div class="album-photo real"><img src="images/shrimp-rolls.jpg" alt="Shrimp Rolls"></div>
+        <div class="album-caption"><h5>Shrimp Rolls</h5><p>Golden & crispy</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="snacks">
+        <div class="album-photo t-dumplings">
+          <span class="emoji">🥟</span>
+          <div class="placeholder-label">Coming soon</div>
+        </div>
+        <div class="album-caption"><h5>Dumplings</h5><p>Hand-folded, pan-seared</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/hibachi-noodles.jpg" alt="Hibachi Noodles"></div>
+        <div class="album-caption"><h5>Hibachi Noodles</h5><p>Toasty · savory · house seasoned</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/chicken-rice-box.jpg" alt="Chicken & Fried Rice"></div>
+        <div class="album-caption"><h5>Chicken & Rice</h5><p>Takeout ready · grilled fresh</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="snacks">
+        <div class="album-photo t-wings">
+          <span class="emoji">🍗</span>
+          <div class="placeholder-label">Coming soon</div>
+        </div>
+        <div class="album-caption"><h5>Sesame Wings</h5><p>Sweet · crispy · house signature</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/steak-filet.jpg" alt="Steak Filet"></div>
+        <div class="album-caption"><h5>Hibachi Steak Filet</h5><p>Premium cut · melt in your mouth</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="hibachi">
+        <div class="album-photo real"><img src="images/chicken-broccoli.jpg" alt="Chicken & Broccoli"></div>
+        <div class="album-caption"><h5>Chicken & Broccoli</h5><p>Wok-tossed with garlic butter</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="boba">
+        <div class="album-photo t-slushie">
+          <span class="emoji">🥤</span>
+          <div class="placeholder-label">Coming soon</div>
+        </div>
+        <div class="album-caption"><h5>Fruit Slushie</h5><p>Ice-blended refreshment</p></div>
+      </a>
+
+      <a href="#" class="album-item" data-cat="vibe">
+        <div class="album-photo real"><img src="images/exterior.jpg" alt="Tokyo Express Greensboro exterior"></div>
+        <div class="album-caption"><h5>Welcome In</h5><p>3722 E. Battleground Ave · Greensboro</p></div>
+      </a>
+    </div>
+
+    <div class="album-cta">
+      <h4>📸 Want your photo featured?</h4>
+      <p>Tag us on Instagram <strong style="color:var(--red-light);">@tokyoexpressgso</strong> or leave a photo review on Google Maps — we'd love to add you to the album!</p>
+      <div class="buttons">
+        <a href="https://maps.google.com/?q=Tokyo+Express+Hibachi+Boba+Greensboro+NC" target="_blank" class="btn btn-primary">📍 See Google Reviews</a>
+        <a href="#" class="btn btn-outline">📷 Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-tag">Visit Us</div>
+        <h2 class="section-title">Come Say Hi<span class="jp">ようこそ</span></h2>
+        <p class="section-sub" style="margin-bottom:36px;">Stop in for dine-in, pick-up, or catering — we're ready when you are.</p>
+
+        <div class="contact-info-block">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text">
+            <h5>Address</h5>
+            <p>3722 E. Battleground Ave.<br>Greensboro, NC 27410</p>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <h5>Call or Order</h5>
+            <p><a href="tel:3367072536">336-707-2536</a></p>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-text">
+            <h5>Email</h5>
+            <p><a href="mailto:hello@tokyoexpressgso.com">hello@tokyoexpressgso.com</a></p>
+          </div>
+        </div>
+
+        <div class="hours-box" style="margin-top:30px;">
+          <h4>🕒 Hours of Operation</h4>
+          <ul class="hours-list">
+            <li class="open"><span class="day">Monday</span><span class="time">11:00 AM – 9:30 PM</span></li>
+            <li class="open"><span class="day">Tuesday</span><span class="time">11:00 AM – 9:30 PM</span></li>
+            <li class="open"><span class="day">Wednesday</span><span class="time">11:00 AM – 9:30 PM</span></li>
+            <li class="open"><span class="day">Thursday</span><span class="time">11:00 AM – 9:30 PM</span></li>
+            <li class="open"><span class="day">Friday</span><span class="time">11:00 AM – 10:30 PM</span></li>
+            <li class="open"><span class="day">Saturday</span><span class="time">11:00 AM – 10:30 PM</span></li>
+            <li><span class="day">Sunday</span><span class="time" style="color:#888;">12:00 PM – 9:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map-grid"></div>
+        <div class="map-pin">📍</div>
+        <h3>Tokyo Express</h3>
+        <p>3722 E. Battleground Ave.<br>Greensboro, NC 27410</p>
+        <a href="https://maps.google.com/?q=3722+E+Battleground+Ave+Greensboro+NC+27410" target="_blank" class="btn btn-primary">Get Directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">
+          <div class="nav-logo-circle"></div>
+          <div class="nav-logo-text">TOKYO EXPRESS<span>Hibachi & Boba</span></div>
+        </a>
+        <p>Where sizzling hibachi meets refreshing boba. Family-owned in Greensboro, NC — built on one little college dream.</p>
+        <div class="socials">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Instagram">◉</a>
+          <a href="#" title="TikTok">♪</a>
+          <a href="#" title="Google">G</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="#menu">Hibachi Entrees</a></li>
+          <li><a href="#menu">Combo Plates</a></li>
+          <li><a href="#menu">Boba & Drinks</a></li>
+          <li><a href="#menu">Catering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:3367072536">336-707-2536</a></li>
+          <li><a href="https://maps.google.com/?q=3722+E+Battleground+Ave+Greensboro+NC+27410" target="_blank">Directions</a></li>
+          <li><a href="#contact">Hours</a></li>
+          <li><a href="#menu">Order Catering</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Tokyo Express – Hibachi and Boba. All rights reserved.</div>
+      <div class="jp">東京エクスプレス · 2026</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Menu tab switching
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.menu-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Album filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const albumItems = document.querySelectorAll('.album-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      albumItems.forEach(item => {
+        if (filter === 'all' || item.dataset.cat === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Prevent empty href clicks
+  document.querySelectorAll('.album-item').forEach(a => {
+    a.addEventListener('click', (e) => e.preventDefault());
+  });
+
+  // Scroll reveal
+  const revealed = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.style.opacity = 1;
+    });
+  }, { threshold: 0.1 });
+  revealed.forEach(s => {
+    s.style.transition = 'opacity 0.8s';
+    observer.observe(s);
+  });
+</script>
+
+</body>
+</html>
