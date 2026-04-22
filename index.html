@@ -1125,9 +1125,89 @@ footer {
   .story-stats { grid-template-columns: 1fr; }
   .album { columns: 1; }
 }
+
+/* ---------- PROMO POPUP ---------- */
+.promo-popup {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.promo-popup.open {
+  opacity: 1; visibility: visible;
+}
+.promo-popup-inner {
+  position: relative;
+  max-width: 640px; width: 100%;
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.promo-popup.open .promo-popup-inner {
+  transform: scale(1);
+}
+.promo-popup-image {
+  width: 100%; height: auto; display: block;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 3px rgba(255,255,255,0.1);
+  cursor: pointer;
+}
+.promo-popup-close {
+  position: absolute;
+  top: -18px; right: -18px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #fff; color: var(--black);
+  border: none;
+  font-size: 22px; line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+  font-weight: bold;
+}
+.promo-popup-close:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: var(--red); color: #fff;
+}
+.promo-popup-cta {
+  position: absolute;
+  bottom: 16px; left: 50%; transform: translateX(-50%);
+  background: var(--red); color: #fff;
+  padding: 12px 28px; border-radius: 50px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px; letter-spacing: 2px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(200,16,46,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.promo-popup-cta:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 15px 35px rgba(200,16,46,0.7);
+}
+@media (max-width: 600px) {
+  .promo-popup-close {
+    top: -14px; right: -14px;
+    width: 38px; height: 38px; font-size: 18px;
+  }
+  .promo-popup-cta { font-size: 12px; padding: 10px 22px; }
+}
 </style>
 </head>
 <body>
+
+<!-- Promotional Popup -->
+<div class="promo-popup" id="promoPopup" role="dialog" aria-modal="true" aria-label="New menu special">
+  <div class="promo-popup-inner">
+    <button class="promo-popup-close" id="promoClose" aria-label="Close popup">✕</button>
+    <img src="images/promo-kimchi.jpg" alt="New on the menu: Tokyo Express Cucumbers Kimchi — $5.50 per 12oz container" class="promo-popup-image">
+    <a href="https://order.tokyoexpgreensboro.com/order/" target="_blank" rel="noopener" class="promo-popup-cta">🛒 Order Now →</a>
+  </div>
+</div>
 
 <!-- Falling sakura -->
 <div class="sakura" style="left: 10%; animation-delay: 0s;">🌸</div>
@@ -1209,10 +1289,10 @@ footer {
       <div class="about-photo-wrap">
         <div class="about-frame"></div>
         <div class="about-photo has-image">
-          <img src="images/signature-trio.jpg" alt="Snow's signature hibachi trio">
+          <img src="images/snow-family.jpg" alt="Snow and her family at home in Greensboro, NC">
         </div>
         <div class="about-quote">
-          <p>A little college dream, now served fresh every day.</p>
+          <p>From a college girl's dream — to our family's table.</p>
           <div class="author">— SNOW, FOUNDER</div>
         </div>
       </div>
@@ -1221,30 +1301,34 @@ footer {
         <h2 class="section-title">Meet Snow<span class="jp">私たちの物語</span></h2>
         <div class="story-text">
           <p>
-            Years ago, Snow was just a <span class="highlight">hard-working college student</span>,
-            juggling late-night shifts at a small boba tea shop to pay for tuition, books, and the life she
-            was building one cup at a time.
+            Long before Tokyo Express, <span class="highlight">a young college girl named Snow</span>
+            was pulling late shifts at a little boba shop — sealing cups, shaking milk tea, and
+            saving every dollar to pay for tuition, books, and a future she was still dreaming up.
           </p>
           <p>
-            Between sealing cups and shaking milk tea, she held a quiet dream in her heart —
+            Between orders, she kept a quiet wish tucked close to her heart —
             <span class="big">“One day, I'll have a boba shop of my own. A place that feels like home.”</span>
           </p>
           <p>
-            She didn't imagine that dream would grow <span class="highlight">even bigger</span>.
-            Today, that little wish has blossomed into <strong>Tokyo Express — Hibachi and Boba</strong>,
-            a place where the sizzle of a hibachi grill meets the happy pop of tapioca pearls.
-            Every plate we serve and every cup we shake is poured with the same spirit that started it all:
-            <em>hustle, heart, and a hope that a good meal can make someone's day a little brighter.</em>
+            That was <span class="highlight">many years ago</span>. College came and went.
+            Life brought her <strong>a husband, two beautiful children</strong>, a home in Greensboro,
+            and more kitchens than she ever imagined cooking in.
+            The dream grew up right alongside her — and <strong>bloomed into Tokyo Express — Hibachi and Boba</strong>,
+            where the sizzle of the grill meets the happy pop of tapioca pearls.
           </p>
           <p>
-            Whether you're stopping in for a quick lunch between classes, bringing the family for dinner,
-            or catering your next big event — welcome. You're part of the story now.
+            Today, every plate Snow serves and every cup she shakes carries the same spirit that started it all:
+            <em>hustle, heart, and the love of a mom who believes a good meal can make someone's day a little brighter.</em>
+          </p>
+          <p>
+            Whether you're stopping in for a quick lunch, bringing the whole family for dinner,
+            or catering your next big celebration — welcome. You're part of the story now.
           </p>
         </div>
         <div class="story-stats">
           <div class="stat"><div class="num">100%</div><div class="label">Fresh Daily</div></div>
           <div class="stat"><div class="num">40+</div><div class="label">Boba Flavors</div></div>
-          <div class="stat"><div class="num">1</div><div class="label">Big Dream</div></div>
+          <div class="stat"><div class="num">1</div><div class="label">Family · One Dream</div></div>
         </div>
       </div>
     </div>
@@ -1955,6 +2039,30 @@ footer {
   // Prevent empty href clicks
   document.querySelectorAll('.album-item').forEach(a => {
     a.addEventListener('click', (e) => e.preventDefault());
+  });
+
+  // Promo popup — shows 3s after page load, dismiss on click or Esc
+  const promoPopup = document.getElementById('promoPopup');
+  const promoClose = document.getElementById('promoClose');
+  const closePromo = () => {
+    promoPopup.classList.remove('open');
+    // Remember dismissal for this session so it doesn't re-appear on nav clicks
+    try { sessionStorage.setItem('promoDismissed', '1'); } catch (e) {}
+  };
+  // Only show if not already dismissed this session
+  let alreadyDismissed = false;
+  try { alreadyDismissed = sessionStorage.getItem('promoDismissed') === '1'; } catch (e) {}
+  if (!alreadyDismissed) {
+    setTimeout(() => promoPopup.classList.add('open'), 3000);
+  }
+  promoClose.addEventListener('click', closePromo);
+  // Click anywhere on the dark overlay (outside the image) closes it
+  promoPopup.addEventListener('click', (e) => {
+    if (e.target === promoPopup) closePromo();
+  });
+  // Esc key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && promoPopup.classList.contains('open')) closePromo();
   });
 
   // Scroll reveal
