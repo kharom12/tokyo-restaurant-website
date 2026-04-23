@@ -1207,9 +1207,10 @@ footer {
   }
 
   /* Boba board tweaks */
-  .boba-tri { grid-template-columns: 1fr; gap: 18px; }
+  .boba-tri { grid-template-columns: 1fr !important; gap: 18px !important; }
   .boba-tri-col h4 { font-size: 26px; letter-spacing: 2px; }
   .boba-tri-col .sub-title { font-size: 16px; }
+  .boba-tri-col ul[style] { column-count: 1 !important; }
   .boba-cups-row { gap: 16px; margin-bottom: 20px; }
   .price-tag { padding: 10px 18px; }
   .price-tag .label { font-size: 14px; }
@@ -1709,83 +1710,134 @@ footer {
           <div class="cup slushie"></div>
         </div>
 
+        <h3 class="board-title" style="text-align:center;">BOBA &amp; TEA <span style="color:#1a1a1a;">$5.25</span></h3>
+        <div class="board-subtitle" style="text-align:center; border:none; padding-bottom:0; margin-bottom:24px;">Includes 1 FREE topping of choice per drink</div>
+
         <div class="boba-price-tags">
-          <div class="price-tag"><span class="label">🧋 Milk Tea</span><span class="val">$5.95</span></div>
-          <div class="price-tag"><span class="label">🍹 Fruit Tea</span><span class="val">$5.95</span></div>
-          <div class="price-tag"><span class="label">🥤 Slushies</span><span class="val">$5.95</span></div>
+          <div class="price-tag"><span class="label">🧋 Milk Tea</span><span class="val">$5.25</span></div>
+          <div class="price-tag"><span class="label">🍹 Fruit Tea</span><span class="val">$5.25</span></div>
+          <div class="price-tag"><span class="label">🥤 Slushies</span><span class="val">$5.25</span></div>
         </div>
 
-        <div style="text-align:center; margin:30px 0; font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:3px; color:#1a1a1a;">
-          BUILD YOUR BOBA · 3 EASY STEPS
-        </div>
-
-        <div class="boba-tri">
+        <!-- FRUIT TEA + MILK TEA (side by side) -->
+        <div class="boba-tri" style="grid-template-columns: 1fr 1fr; margin-top:40px;">
           <div class="boba-tri-col">
-            <h4>BASE <span class="step">1</span></h4>
-            <div class="sub-title">Milk Tea <span style="font-size:11px; color:#666;">— comes with boba</span></div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Our creamy, hand-shaken milk teas — rich, smooth, and served with classic black tapioca boba. Pick your favorite flavor:</p>
-            <ul>
-              <li>Thai Tea</li><li>Rose</li><li>Taro</li><li>Matcha</li>
-              <li>Watermelon</li><li>Avocado</li><li>Green Apple</li>
-              <li>Peach</li><li>Tiramisu</li><li>Coconut</li>
-              <li>Strawberry</li><li>Mocha</li><li>Sesame</li><li>Lychee</li>
-            </ul>
-            <div class="sub-title">Fruit Tea</div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Refreshing, lightly sweetened teas brewed with real fruit — bright, clean, and caffeine-friendly.</p>
-            <ul>
-              <li>Super Fruit</li><li>Mango</li><li>Peach Lemonade</li>
-              <li>Lychee Oolong</li><li>Peach</li><li>Orange</li>
-              <li>Pineapple</li><li>Strawberry</li><li>Passionfruit</li>
-            </ul>
-            <div class="sub-title">Slushies</div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Ice-blended, dangerously sippable frozen drinks — perfect for hot days or sweet tooths.</p>
-            <ul>
-              <li>Mango</li><li>Strawberry</li><li>Peach</li>
-              <li>Pineapple</li><li>Passionfruit</li><li>Watermelon</li>
-            </ul>
-          </div>
-
-          <div class="boba-tri-col">
-            <h4>FLAVOR <span class="step">2</span></h4>
-            <div class="sub-title">Classic</div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">All-time favorites — familiar flavors that pair beautifully with milk tea or fruit tea bases.</p>
-            <ul>
-              <li>Honeydew</li><li>Chai</li><li>Lavender</li><li>Vanilla</li>
-              <li>Blueberry</li><li>Pineapple</li><li>Banana</li>
-              <li>Pumpkin Spice</li><li>Earl Grey</li><li>Coffee</li>
-              <li>Mango</li><li>Chocolate</li><li>Brown Sugar</li>
-            </ul>
-            <div class="sub-title">Signature</div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">House-crafted flavor twists you won't find anywhere else in Greensboro. Bold, fun, and absolutely worth trying.</p>
-            <ul>
-              <li>Green Apple</li><li>Honey Ginger</li>
+            <h4>FRUIT TEA</h4>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:14px; line-height:1.5;">Refreshing, lightly sweetened teas brewed with real fruit — bright, clean, and caffeine-friendly.</p>
+            <ul style="column-count:2; column-gap:20px;">
+              <li>Super Fruit</li>
+              <li>Mango</li>
+              <li>Peach Lemonade</li>
+              <li>Lychee Oolong</li>
+              <li>Lychee Rose</li>
+              <li>Peach</li>
+              <li>Orange</li>
+              <li>Pineapple</li>
+              <li>Strawberry</li>
+              <li>Passionfruit</li>
+              <li>Green Apple</li>
+              <li>Honey Ginger</li>
               <li>Pomegranate Passionfruit</li>
               <li>Mango Strawberry Rose</li>
-              <li>Red Guava</li><li>Grapefruit</li>
-              <li>Honeydew</li><li>Sour Plum</li><li>Acai</li>
+              <li>Red Guava</li>
             </ul>
           </div>
 
           <div class="boba-tri-col">
-            <h4>TOPPING <span class="step">3</span></h4>
-            <div class="sub-title">Jellies</div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Soft, bouncy fruit jellies and classic chewy tapioca boba — that satisfying texture you sip for.</p>
-            <ul>
-              <li>Tapioca Boba</li><li>Strawberry Jelly</li>
-              <li>Mango Jelly</li><li>Rainbow Jelly</li>
-              <li>Coffee Jelly</li><li>Passionfruit Jelly</li>
-              <li>Crystal Jelly</li><li>Lychee Jelly</li>
-              <li>Pineapple Jelly</li><li>Green Apple Jelly</li>
-            </ul>
-            <div class="sub-title">Popping Pops</div>
-            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:10px; line-height:1.5;">Fruit-filled pearls that burst with juice when you bite — like a little flavor firework in every sip.</p>
-            <ul>
-              <li>Raspberry Pops</li><li>Green Apple Pops</li>
-              <li>Lychee Pops</li><li>Kiwi Pops</li>
-              <li>Yogurt Pops</li><li>Mango Pops</li>
-              <li>Peach Pops</li><li>Passionfruit Pops</li>
+            <h4>MILK TEA</h4>
+            <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:14px; line-height:1.5;">Creamy, hand-shaken milk teas — rich, smooth, and comforting in every sip.</p>
+            <ul style="column-count:2; column-gap:20px;">
+              <li>Thai Tea</li>
+              <li>Rose</li>
+              <li>Taro</li>
+              <li>Matcha</li>
+              <li>Watermelon</li>
+              <li>Avocado</li>
+              <li>Green Apple</li>
+              <li>Peach</li>
+              <li>Tiramisu</li>
+              <li>Coconut</li>
+              <li>Strawberry</li>
+              <li>Mocha</li>
+              <li>Sesame</li>
+              <li>Lychee</li>
+              <li>Honeydew</li>
+              <li>Chai</li>
+              <li>Lavender</li>
+              <li>Vanilla</li>
+              <li>Blueberry</li>
+              <li>Pineapple</li>
+              <li>Banana</li>
+              <li>Pumpkin Spice</li>
+              <li>Earl Grey</li>
+              <li>Coffee</li>
+              <li>Mango</li>
+              <li>Chocolate</li>
+              <li>Brown Sugar Milk Swirl</li>
             </ul>
           </div>
+        </div>
+
+        <!-- SLUSHES -->
+        <div style="margin-top:40px; padding:20px 24px; background:rgba(255,255,255,0.55); border-left:4px solid var(--red); border-radius:8px; position:relative; z-index:2;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:2.5px; color:var(--red); margin-bottom:4px;">SLUSHES <span style="color:#1a1a1a;">$5.25</span></div>
+          <p style="font-size:13px; color:#555; font-style:italic; margin:0; line-height:1.5;">Any fruit tea can be made into a slush. Mix &amp; match 2 flavors.</p>
+        </div>
+
+        <!-- TOPPINGS -->
+        <div style="margin-top:40px; position:relative; z-index:2;">
+          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; color:var(--red); border-bottom:2px solid #1a1a1a; padding-bottom:10px; margin-bottom:20px;">TOPPINGS</h4>
+
+          <div class="boba-tri" style="grid-template-columns: 1fr 1fr 1fr; gap:24px;">
+            <div class="boba-tri-col">
+              <div class="sub-title" style="font-style:italic;">Classic</div>
+              <ul>
+                <li>Crystal Jelly</li>
+                <li>Tapioca Boba</li>
+              </ul>
+            </div>
+
+            <div class="boba-tri-col">
+              <div class="sub-title" style="font-style:italic;">Jelly</div>
+              <ul>
+                <li>Strawberry Jelly</li>
+                <li>Mango Jelly</li>
+                <li>Rainbow Jelly</li>
+                <li>Coffee Jelly</li>
+                <li>Passionfruit Jelly</li>
+                <li>Lychee Jelly</li>
+                <li>Pineapple Jelly</li>
+                <li>Green Apple Jelly</li>
+              </ul>
+            </div>
+
+            <div class="boba-tri-col">
+              <div class="sub-title" style="font-style:italic;">Popping Boba</div>
+              <ul>
+                <li>Raspberry Pops</li>
+                <li>Green Apple Pops</li>
+                <li>Lychee Pops</li>
+                <li>Kiwi Pops</li>
+                <li>Yogurt Pops</li>
+                <li>Mango Pops</li>
+                <li>Peach Pops</li>
+                <li>Passionfruit Pops</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- MORE DRINKS -->
+        <div style="margin-top:44px; position:relative; z-index:2;">
+          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:3px; color:var(--red); text-align:center; border-bottom:2px solid #1a1a1a; padding-bottom:10px; margin-bottom:20px;">MORE DRINKS</h4>
+          <ul class="board-list" style="max-width:520px; margin:0 auto;">
+            <li><div class="row"><span class="name">½ Gallon Tea</span><span class="dots"></span><span class="price">$4.75</span></div></li>
+            <li><div class="row"><span class="name">Soft Drink</span><span class="dots"></span><span class="price">$2.75</span></div></li>
+            <li><div class="row"><span class="name">Hot Tea</span><span class="dots"></span><span class="price">$2.75</span></div></li>
+            <li><div class="row"><span class="name">Sweet Tea / Unsweet Tea</span><span class="dots"></span><span class="price">$1.85</span></div></li>
+            <li><div class="row"><span class="name">20 oz Bottle Drink</span><span class="dots"></span><span class="price">$2.95</span></div></li>
+            <li><div class="row"><span class="name">2-liter Soft Drink</span><span class="dots"></span><span class="price">$3.75</span></div></li>
+          </ul>
         </div>
       </div>
     </div>
