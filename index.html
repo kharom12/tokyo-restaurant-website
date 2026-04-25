@@ -66,16 +66,13 @@ nav {
 }
 .nav-logo-circle {
   width: 46px; height: 46px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #e63946, #8b0a20);
   display: flex; align-items: center; justify-content: center;
-  border: 2px solid #fff;
   position: relative;
   overflow: hidden;
-}
-.nav-logo-circle::before {
-  content: "⛩";
-  font-size: 26px; color: #1a1a1a;
-  position: relative; z-index: 2;
+  background-image: url("images/logo.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1a;
 }
 .nav-logo-text {
   font-family: 'Bebas Neue', sans-serif;
@@ -992,12 +989,14 @@ footer {
 .menu-board .logo-corner {
   position: absolute; top: 30px; right: 30px;
   width: 70px; height: 70px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #e63946, #8b0a20);
   display: flex; align-items: center; justify-content: center;
-  color: #111; font-size: 30px;
-  border: 2px solid #fff;
+  font-size: 0; /* hide the ⛩ emoji content */
   z-index: 2;
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background-image: url("images/logo.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1a;
 }
 .board-title {
   font-family: 'Bebas Neue', sans-serif;
