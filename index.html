@@ -717,14 +717,78 @@ section { padding: 100px 0; position: relative; }
 .album-photo.t-boba { height: 280px; background: linear-gradient(135deg, #d4a574 0%, #6b4e2e 100%); }
 .album-photo.t-shrimp { height: 300px; background: linear-gradient(135deg, #ff9a56 0%, #c85a28 100%); }
 .album-photo.t-interior { height: 220px; background: linear-gradient(135deg, #2a2a2a 0%, #0d0d0d 100%); }
-.album-photo.t-dumplings { height: 260px; background: linear-gradient(135deg, #e0c090 0%, #8b6a3e 100%); }
-.album-photo.t-milktea { height: 320px; background: linear-gradient(135deg, #c9a98a 0%, #6d4d2e 100%); }
-.album-photo.t-fruittea { height: 270px; background: linear-gradient(135deg, #ff6b9d 0%, #8b2a52 100%); }
-.album-photo.t-slushie { height: 310px; background: linear-gradient(135deg, #7dd3fc 0%, #075985 100%); }
+.album-photo.t-dumplings { height: 340px; background: linear-gradient(135deg, #f0d9a8 0%, #6d4d2e 100%); }
+.album-photo.t-milktea { height: 340px; background: linear-gradient(135deg, #c9a98a 0%, #6d4d2e 100%); }
+.album-photo.t-fruittea { height: 340px; background: linear-gradient(135deg, #ff6b9d 0%, #8b2a52 100%); }
+.album-photo.t-slushie { height: 340px; background: linear-gradient(135deg, #7dd3fc 0%, #075985 100%); }
 .album-photo.t-hibachi { height: 290px; background: linear-gradient(135deg, #c8102e 0%, #5c0616 100%); }
-.album-photo.t-wings { height: 240px; background: linear-gradient(135deg, #e8b979 0%, #8b4513 100%); }
+.album-photo.t-wings { height: 340px; background: linear-gradient(135deg, #f5b266 0%, #6b2e0a 100%); }
 .album-photo.t-rolls { height: 300px; background: linear-gradient(135deg, #d4a574 0%, #7a4a20 100%); }
 .album-photo.t-logo { height: 260px; background: radial-gradient(circle at 30% 30%, #e63946, #5c0616); }
+
+/* Boba product showcase cards (replace empty placeholders) */
+.album-photo.boba-card {
+  flex-direction: column;
+  padding: 22px 18px 18px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.album-photo.boba-card::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(255,255,255,0.15) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(0,0,0,0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+.album-photo.boba-card .boba-svg {
+  height: 130px; width: auto;
+  max-width: 140px;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
+  margin: 8px 0 10px;
+  position: relative; z-index: 2;
+}
+.album-photo.boba-card .boba-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; letter-spacing: 3px;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  position: relative; z-index: 2;
+}
+.album-photo.boba-card .boba-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 6px;
+  position: relative; z-index: 2;
+}
+.album-photo.boba-card .boba-meta {
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  padding: 4px 10px; border-radius: 20px;
+  margin-bottom: 10px;
+  position: relative; z-index: 2;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.album-photo.boba-card .boba-flavors {
+  font-size: 10.5px; letter-spacing: 1px;
+  line-height: 1.7;
+  opacity: 0.95;
+  position: relative; z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  padding: 0 4px;
+}
+.album-photo.boba-card .boba-flavors strong {
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+.album-photo.boba-card .placeholder-label { display: none; }
+.album-photo.boba-card .emoji { display: none; }
 
 .album-caption {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -1938,12 +2002,60 @@ footer {
         <div class="album-caption"><h5>Hibachi Scallops</h5><p>Tender · buttery · perfect sear</p></div>
       </a>
 
-      <a href="#" class="album-item" data-cat="boba">
-        <div class="album-photo t-milktea">
-          <span class="emoji">🧋</span>
-          <div class="placeholder-label">Coming soon</div>
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo t-milktea boba-card">
+          <svg class="boba-svg" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Cup body (trapezoid) -->
+            <defs>
+              <linearGradient id="mt-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f5e6d3"/>
+                <stop offset="60%" stop-color="#d4ad7e"/>
+                <stop offset="100%" stop-color="#a87544"/>
+              </linearGradient>
+              <linearGradient id="mt-shine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+                <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+            </defs>
+            <!-- Lid -->
+            <ellipse cx="55" cy="22" rx="38" ry="6" fill="#f0e4d0"/>
+            <rect x="17" y="20" width="76" height="6" fill="#e8d9c0"/>
+            <!-- Cup -->
+            <path d="M 22 26 L 88 26 L 82 120 L 28 120 Z" fill="url(#mt-grad)"/>
+            <path d="M 22 26 L 88 26 L 82 120 L 28 120 Z" fill="url(#mt-shine)"/>
+            <!-- Tapioca pearls at bottom -->
+            <g fill="#1a0f08">
+              <circle cx="36" cy="108" r="4"/>
+              <circle cx="46" cy="112" r="4"/>
+              <circle cx="56" cy="108" r="4"/>
+              <circle cx="66" cy="112" r="4"/>
+              <circle cx="76" cy="108" r="4"/>
+              <circle cx="42" cy="118" r="4"/>
+              <circle cx="54" cy="118" r="4"/>
+              <circle cx="68" cy="118" r="4"/>
+              <circle cx="40" cy="100" r="3.5"/>
+              <circle cx="60" cy="100" r="3.5"/>
+              <circle cx="72" cy="100" r="3.5"/>
+            </g>
+            <!-- Highlight on pearls -->
+            <g fill="rgba(255,255,255,0.35)">
+              <circle cx="34" cy="106" r="1"/>
+              <circle cx="54" cy="106" r="1"/>
+              <circle cx="74" cy="106" r="1"/>
+            </g>
+            <!-- Straw -->
+            <rect x="58" y="2" width="6" height="34" fill="#c8102e" rx="1"/>
+            <rect x="59" y="2" width="2" height="34" fill="rgba(255,255,255,0.4)" rx="1"/>
+          </svg>
+          <div class="boba-title">MILK TEA</div>
+          <div class="boba-price">$5.25</div>
+          <div class="boba-meta">27 Flavors · Free Topping</div>
+          <div class="boba-flavors">
+            <strong>Thai Tea</strong> · <strong>Taro</strong> · <strong>Matcha</strong><br>
+            Brown Sugar · Coconut · Tiramisu
+          </div>
         </div>
-        <div class="album-caption"><h5>Taro Milk Tea</h5><p>Classic with boba</p></div>
+        <div class="album-caption"><h5>Milk Tea Collection</h5><p>27 flavors · creamy, hand-shaken</p></div>
       </a>
 
       <a href="#" class="album-item" data-cat="hibachi">
@@ -1956,12 +2068,58 @@ footer {
         <div class="album-caption"><h5>Hibachi Chicken</h5><p>Tender · savory · just right</p></div>
       </a>
 
-      <a href="#" class="album-item" data-cat="boba">
-        <div class="album-photo t-fruittea">
-          <span class="emoji">🍹</span>
-          <div class="placeholder-label">Coming soon</div>
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo t-fruittea boba-card">
+          <svg class="boba-svg" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ft-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff2c0"/>
+                <stop offset="40%" stop-color="#ffb84d"/>
+                <stop offset="100%" stop-color="#e6385e"/>
+              </linearGradient>
+              <linearGradient id="ft-shine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+                <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+            </defs>
+            <!-- Lid -->
+            <ellipse cx="55" cy="22" rx="38" ry="6" fill="#ffe9b8"/>
+            <rect x="17" y="20" width="76" height="6" fill="#ffd989"/>
+            <!-- Cup -->
+            <path d="M 22 26 L 88 26 L 82 120 L 28 120 Z" fill="url(#ft-grad)"/>
+            <path d="M 22 26 L 88 26 L 82 120 L 28 120 Z" fill="url(#ft-shine)"/>
+            <!-- Fruit pieces floating -->
+            <g>
+              <circle cx="38" cy="50" r="4" fill="#ff5577"/>
+              <circle cx="68" cy="60" r="3.5" fill="#ffaa33"/>
+              <circle cx="50" cy="78" r="4" fill="#ff7799"/>
+              <circle cx="74" cy="90" r="3" fill="#ff5577"/>
+              <circle cx="40" cy="95" r="3.5" fill="#ffaa33"/>
+              <circle cx="58" cy="105" r="3" fill="#ff5577"/>
+              <!-- Lychee/circular highlights -->
+              <circle cx="38" cy="48" r="1.2" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="68" cy="58" r="1" fill="rgba(255,255,255,0.7)"/>
+              <circle cx="50" cy="76" r="1.2" fill="rgba(255,255,255,0.7)"/>
+            </g>
+            <!-- Ice cubes -->
+            <g fill="rgba(255,255,255,0.55)">
+              <rect x="44" y="40" width="9" height="9" rx="1.5"/>
+              <rect x="60" y="46" width="8" height="8" rx="1.5"/>
+              <rect x="35" y="65" width="9" height="9" rx="1.5"/>
+            </g>
+            <!-- Straw -->
+            <rect x="58" y="2" width="6" height="34" fill="#3b82f6" rx="1"/>
+            <rect x="59" y="2" width="2" height="34" fill="rgba(255,255,255,0.4)" rx="1"/>
+          </svg>
+          <div class="boba-title">FRUIT TEA</div>
+          <div class="boba-price">$5.25</div>
+          <div class="boba-meta">15 Flavors · Real Fruit</div>
+          <div class="boba-flavors">
+            <strong>Lychee Rose</strong> · <strong>Mango</strong> · <strong>Peach</strong><br>
+            Passionfruit · Honey Ginger · Red Guava
+          </div>
         </div>
-        <div class="album-caption"><h5>Fruit Tea</h5><p>Real fruit · bright & fresh</p></div>
+        <div class="album-caption"><h5>Fruit Tea Collection</h5><p>15 flavors · real fruit, refreshing</p></div>
       </a>
 
       <a href="#" class="album-item" data-cat="hibachi">
@@ -1974,12 +2132,66 @@ footer {
         <div class="album-caption"><h5>Shrimp Rolls</h5><p>Golden & crispy</p></div>
       </a>
 
-      <a href="#" class="album-item" data-cat="snacks">
-        <div class="album-photo t-dumplings">
-          <span class="emoji">🥟</span>
-          <div class="placeholder-label">Coming soon</div>
+      <a href="#menu" class="album-item" data-cat="snacks">
+        <div class="album-photo t-dumplings boba-card">
+          <svg class="boba-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dump-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fff5e0"/>
+                <stop offset="60%" stop-color="#f0d9a8"/>
+                <stop offset="100%" stop-color="#c9954b"/>
+              </linearGradient>
+              <linearGradient id="dump-bottom" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a86a2e"/>
+                <stop offset="100%" stop-color="#5e3812"/>
+              </linearGradient>
+            </defs>
+            <!-- Wooden plate / shadow -->
+            <ellipse cx="65" cy="115" rx="55" ry="8" fill="rgba(0,0,0,0.35)"/>
+            <!-- Dumpling 3 (back) -->
+            <g transform="translate(35,55)">
+              <path d="M 0 30 Q 0 5 25 5 Q 50 5 50 30 Q 50 38 40 38 L 10 38 Q 0 38 0 30 Z" fill="url(#dump-grad)"/>
+              <path d="M 0 30 Q 0 38 10 38 L 40 38 Q 50 38 50 30" fill="url(#dump-bottom)"/>
+              <!-- Pleats -->
+              <path d="M 8 10 Q 14 6 18 12" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <path d="M 18 8 Q 25 4 30 10" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <path d="M 30 8 Q 36 6 42 12" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+            </g>
+            <!-- Dumpling 1 (front-left) -->
+            <g transform="translate(15,72)">
+              <path d="M 0 30 Q 0 5 25 5 Q 50 5 50 30 Q 50 38 40 38 L 10 38 Q 0 38 0 30 Z" fill="url(#dump-grad)"/>
+              <path d="M 0 30 Q 0 38 10 38 L 40 38 Q 50 38 50 30" fill="url(#dump-bottom)"/>
+              <path d="M 8 10 Q 14 6 18 12" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <path d="M 18 8 Q 25 4 30 10" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <path d="M 30 8 Q 36 6 42 12" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <!-- Highlight -->
+              <ellipse cx="20" cy="14" rx="6" ry="3" fill="rgba(255,255,255,0.4)"/>
+            </g>
+            <!-- Dumpling 2 (front-right) -->
+            <g transform="translate(60,72)">
+              <path d="M 0 30 Q 0 5 25 5 Q 50 5 50 30 Q 50 38 40 38 L 10 38 Q 0 38 0 30 Z" fill="url(#dump-grad)"/>
+              <path d="M 0 30 Q 0 38 10 38 L 40 38 Q 50 38 50 30" fill="url(#dump-bottom)"/>
+              <path d="M 8 10 Q 14 6 18 12" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <path d="M 18 8 Q 25 4 30 10" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <path d="M 30 8 Q 36 6 42 12" stroke="#b8893a" stroke-width="1.2" fill="none"/>
+              <ellipse cx="20" cy="14" rx="6" ry="3" fill="rgba(255,255,255,0.4)"/>
+            </g>
+            <!-- Steam wisps -->
+            <g stroke="rgba(255,255,255,0.55)" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M 50 40 Q 53 32 50 25 Q 47 18 50 10"/>
+              <path d="M 65 38 Q 68 30 65 22 Q 62 15 65 7"/>
+              <path d="M 80 40 Q 83 32 80 25 Q 77 18 80 10"/>
+            </g>
+          </svg>
+          <div class="boba-title">DUMPLINGS</div>
+          <div class="boba-price">From $22.50</div>
+          <div class="boba-meta">25 · 50 · 100 pcs</div>
+          <div class="boba-flavors">
+            <strong>Pork</strong> · <strong>Chicken</strong> · <strong>Veggies</strong><br>
+            Hand-folded · pan-seared · house sauce
+          </div>
         </div>
-        <div class="album-caption"><h5>Dumplings</h5><p>Hand-folded, pan-seared</p></div>
+        <div class="album-caption"><h5>Dumplings</h5><p>Hand-folded · catering ready</p></div>
       </a>
 
       <a href="#" class="album-item" data-cat="hibachi">
@@ -1992,12 +2204,82 @@ footer {
         <div class="album-caption"><h5>Chicken & Rice</h5><p>Takeout ready · grilled fresh</p></div>
       </a>
 
-      <a href="#" class="album-item" data-cat="snacks">
-        <div class="album-photo t-wings">
-          <span class="emoji">🍗</span>
-          <div class="placeholder-label">Coming soon</div>
+      <a href="#menu" class="album-item" data-cat="snacks">
+        <div class="album-photo t-wings boba-card">
+          <svg class="boba-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="wing-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fbcc7d"/>
+                <stop offset="50%" stop-color="#d97927"/>
+                <stop offset="100%" stop-color="#7a3a0a"/>
+              </linearGradient>
+              <linearGradient id="wing-shine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+                <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+            </defs>
+            <!-- Plate shadow -->
+            <ellipse cx="65" cy="118" rx="55" ry="8" fill="rgba(0,0,0,0.35)"/>
+
+            <!-- Drumstick 1 (back-left) -->
+            <g transform="translate(20,30) rotate(-25 30 30)">
+              <!-- Bone -->
+              <ellipse cx="6" cy="6" rx="6" ry="4" fill="#f5e8d0"/>
+              <ellipse cx="2" cy="3" rx="3" ry="2.5" fill="#fff"/>
+              <ellipse cx="2" cy="9" rx="3" ry="2.5" fill="#fff"/>
+              <rect x="6" y="4" width="14" height="6" fill="#f5e8d0"/>
+              <!-- Meat -->
+              <ellipse cx="35" cy="32" rx="22" ry="20" fill="url(#wing-grad)"/>
+              <ellipse cx="35" cy="32" rx="22" ry="20" fill="url(#wing-shine)"/>
+              <!-- Sesame seeds -->
+              <ellipse cx="28" cy="22" rx="1.2" ry="0.7" fill="#fff7d0" transform="rotate(20 28 22)"/>
+              <ellipse cx="40" cy="20" rx="1.2" ry="0.7" fill="#fff7d0" transform="rotate(-15 40 20)"/>
+              <ellipse cx="46" cy="30" rx="1.2" ry="0.7" fill="#fff7d0"/>
+              <ellipse cx="32" cy="38" rx="1.2" ry="0.7" fill="#fff7d0" transform="rotate(35 32 38)"/>
+              <ellipse cx="44" cy="42" rx="1.2" ry="0.7" fill="#fff7d0" transform="rotate(-20 44 42)"/>
+              <ellipse cx="22" cy="32" rx="1.2" ry="0.7" fill="#fff7d0"/>
+              <!-- Glaze highlight -->
+              <ellipse cx="28" cy="24" rx="6" ry="3" fill="rgba(255,255,255,0.35)"/>
+            </g>
+
+            <!-- Drumstick 2 (front-right, larger) -->
+            <g transform="translate(50,55) rotate(20 30 30)">
+              <!-- Bone -->
+              <ellipse cx="6" cy="6" rx="7" ry="4.5" fill="#f5e8d0"/>
+              <ellipse cx="2" cy="3" rx="3.5" ry="2.5" fill="#fff"/>
+              <ellipse cx="2" cy="10" rx="3.5" ry="2.5" fill="#fff"/>
+              <rect x="6" y="4" width="16" height="7" fill="#f5e8d0"/>
+              <!-- Meat -->
+              <ellipse cx="38" cy="34" rx="26" ry="23" fill="url(#wing-grad)"/>
+              <ellipse cx="38" cy="34" rx="26" ry="23" fill="url(#wing-shine)"/>
+              <!-- Sesame seeds -->
+              <ellipse cx="30" cy="22" rx="1.4" ry="0.8" fill="#fff7d0" transform="rotate(15 30 22)"/>
+              <ellipse cx="42" cy="20" rx="1.4" ry="0.8" fill="#fff7d0" transform="rotate(-25 42 20)"/>
+              <ellipse cx="50" cy="30" rx="1.4" ry="0.8" fill="#fff7d0"/>
+              <ellipse cx="35" cy="40" rx="1.4" ry="0.8" fill="#fff7d0" transform="rotate(40 35 40)"/>
+              <ellipse cx="48" cy="44" rx="1.4" ry="0.8" fill="#fff7d0" transform="rotate(-15 48 44)"/>
+              <ellipse cx="22" cy="34" rx="1.4" ry="0.8" fill="#fff7d0"/>
+              <ellipse cx="55" cy="38" rx="1.4" ry="0.8" fill="#fff7d0" transform="rotate(25 55 38)"/>
+              <ellipse cx="28" cy="44" rx="1.4" ry="0.8" fill="#fff7d0"/>
+              <!-- Glaze shine -->
+              <ellipse cx="30" cy="26" rx="8" ry="4" fill="rgba(255,255,255,0.4)"/>
+            </g>
+
+            <!-- Steam wisps -->
+            <g stroke="rgba(255,255,255,0.5)" stroke-width="1.8" fill="none" stroke-linecap="round">
+              <path d="M 45 22 Q 48 16 45 10 Q 42 4 45 -2"/>
+              <path d="M 75 18 Q 78 12 75 6 Q 72 0 75 -6"/>
+            </g>
+          </svg>
+          <div class="boba-title">SESAME WINGS</div>
+          <div class="boba-price">From $30.00</div>
+          <div class="boba-meta">25 · 50 · 100 · 150 pcs</div>
+          <div class="boba-flavors">
+            <strong>House Garlic-Salt</strong> or <strong>Sesame Glaze</strong><br>
+            Double-fried · jumbo · catering ready
+          </div>
         </div>
-        <div class="album-caption"><h5>Sesame Wings</h5><p>Sweet · crispy · house signature</p></div>
+        <div class="album-caption"><h5>Sesame Wings</h5><p>Crispy · sweet sesame · catering favorite</p></div>
       </a>
 
       <a href="#" class="album-item" data-cat="hibachi">
@@ -2010,12 +2292,58 @@ footer {
         <div class="album-caption"><h5>Chicken & Broccoli</h5><p>Wok-tossed with garlic butter</p></div>
       </a>
 
-      <a href="#" class="album-item" data-cat="boba">
-        <div class="album-photo t-slushie">
-          <span class="emoji">🥤</span>
-          <div class="placeholder-label">Coming soon</div>
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo t-slushie boba-card">
+          <svg class="boba-svg" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sl-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#e0f7ff"/>
+                <stop offset="50%" stop-color="#7ed4ff"/>
+                <stop offset="100%" stop-color="#0ea5e9"/>
+              </linearGradient>
+              <linearGradient id="sl-shine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+                <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+            </defs>
+            <!-- Dome lid (slushie style) -->
+            <path d="M 17 28 Q 17 6 55 4 Q 93 6 93 28 Z" fill="rgba(255,255,255,0.85)"/>
+            <path d="M 25 22 Q 30 12 55 10 Q 80 12 85 22" fill="rgba(255,255,255,0.45)"/>
+            <ellipse cx="55" cy="28" rx="38" ry="4" fill="#cfe7f5"/>
+            <!-- Cup -->
+            <path d="M 22 28 L 88 28 L 82 120 L 28 120 Z" fill="url(#sl-grad)"/>
+            <path d="M 22 28 L 88 28 L 82 120 L 28 120 Z" fill="url(#sl-shine)"/>
+            <!-- Crushed ice texture -->
+            <g fill="rgba(255,255,255,0.7)">
+              <polygon points="34,42 38,36 42,42 38,46"/>
+              <polygon points="50,50 54,44 58,50 54,54"/>
+              <polygon points="66,42 70,36 74,42 70,46"/>
+              <polygon points="42,60 46,54 50,60 46,64"/>
+              <polygon points="60,62 64,56 68,62 64,66"/>
+              <polygon points="36,72 40,66 44,72 40,76"/>
+              <polygon points="56,80 60,74 64,80 60,84"/>
+              <polygon points="72,76 76,70 80,76 76,80"/>
+              <polygon points="44,90 48,84 52,90 48,94"/>
+              <polygon points="62,98 66,92 70,98 66,102"/>
+              <polygon points="34,108 38,102 42,108 38,112"/>
+            </g>
+            <!-- Whipped top peak -->
+            <circle cx="55" cy="6" r="6" fill="#fff"/>
+            <!-- Cherry on top -->
+            <circle cx="55" cy="3" r="3" fill="#dc2626"/>
+            <line x1="55" y1="3" x2="55" y2="-2" stroke="#16a34a" stroke-width="1.2"/>
+            <!-- Straw -->
+            <rect x="42" y="0" width="5" height="32" fill="#dc2626" rx="1"/>
+          </svg>
+          <div class="boba-title">SLUSHIES</div>
+          <div class="boba-price">$5.25</div>
+          <div class="boba-meta">Mix &amp; Match · 2 Flavors</div>
+          <div class="boba-flavors">
+            <strong>Any fruit tea, blended icy.</strong><br>
+            Watermelon · Mango · Strawberry
+          </div>
         </div>
-        <div class="album-caption"><h5>Fruit Slushie</h5><p>Ice-blended refreshment</p></div>
+        <div class="album-caption"><h5>Slushies Collection</h5><p>Mix & match · ice-blended</p></div>
       </a>
 
       <a href="#" class="album-item" data-cat="vibe">
