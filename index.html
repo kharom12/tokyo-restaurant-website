@@ -1746,6 +1746,10 @@ footer {
                 <div class="row"><span class="name">Sesame Wings</span><span class="desc">4 pieces</span><span class="dots"></span><span class="price">$5.75</span></div>
                 <div class="details">Our signature upgrade — crispy wings tossed in a sweet-savory sesame glaze with a hint of garlic and ginger, then finished with toasted sesame seeds and scallions.</div>
               </li>
+              <li>
+                <div class="row"><span class="name">Coconut Shrimp</span><span class="desc">6 pieces</span><span class="dots"></span><span class="price">$6.50</span></div>
+                <div class="details">Plump, juicy shrimp coated in a golden coconut crust, fried to a perfect crisp. Served with a zesty lime dipping sauce — sweet, tropical, and absolutely addictive.</div>
+              </li>
             </ul>
 
             <div style="margin-top:30px; padding:20px; background:rgba(200,16,46,0.08); border-left:4px solid var(--red); border-radius:8px;">
@@ -1756,8 +1760,8 @@ footer {
           <div class="board-photos">
             <div class="board-photo p-wings">🍗<div class="board-photo-label">Chicken Wings</div></div>
             <div class="board-photo has-image"><img src="images/shrimp-rolls.jpg" alt="Shrimp Rolls"><div class="board-photo-label">Shrimp Rolls</div></div>
+            <div class="board-photo has-image"><img src="images/coconut-shrimp.png" alt="Coconut Shrimp"><div class="board-photo-label">Coconut Shrimp</div></div>
             <div class="board-photo p-dumplings">🥟<div class="board-photo-label">Dumplings</div></div>
-            <div class="board-photo p-wings">🌰<div class="board-photo-label">Sesame Wings</div></div>
           </div>
         </div>
       </div>
@@ -1784,10 +1788,10 @@ footer {
           <div class="price-tag"><span class="label">🥤 Slushies</span><span class="val">$5.25</span></div>
         </div>
 
-        <!-- FRUIT TEA + MILK TEA (side by side) -->
-        <div class="boba-tri" style="grid-template-columns: 1fr 1fr; margin-top:40px;">
-          <div class="boba-tri-col">
-            <h4>FRUIT TEA</h4>
+        <!-- FRUIT TEA -->
+        <div style="margin-top:40px; display:grid; grid-template-columns: 1fr auto; gap:24px; align-items:start; position:relative; z-index:2;">
+          <div class="boba-tri-col" style="background:rgba(255,255,255,0.6); border-radius:12px; padding:20px;">
+            <h4>🍹 FRUIT TEA</h4>
             <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:14px; line-height:1.5;">Refreshing, lightly sweetened teas brewed with real fruit — bright, clean, and caffeine-friendly.</p>
             <ul style="column-count:2; column-gap:20px;">
               <li>Super Fruit</li>
@@ -1807,9 +1811,31 @@ footer {
               <li>Red Guava</li>
             </ul>
           </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="width:160px; height:170px; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+              <img src="images/fruit-tea-variety.png" alt="Fruit Tea" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="width:160px; height:130px; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+              <img src="images/cream-fruit-tea.png" alt="Cream Fruit Tea" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="width:160px; height:130px; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+              <img src="images/strawberry-lemonade.png" alt="Strawberry Lemonade" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+          </div>
+        </div>
 
-          <div class="boba-tri-col">
-            <h4>MILK TEA</h4>
+        <!-- MILK TEA -->
+        <div style="margin-top:30px; display:grid; grid-template-columns: auto 1fr; gap:24px; align-items:start; position:relative; z-index:2;">
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="width:160px; height:200px; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+              <img src="images/thai-milk-tea.png" alt="Thai Milk Tea" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="width:160px; height:160px; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+              <img src="images/pastel-milk-tea.png" alt="Milk Tea" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+          </div>
+          <div class="boba-tri-col" style="background:rgba(255,255,255,0.6); border-radius:12px; padding:20px;">
+            <h4>🧋 MILK TEA</h4>
             <p style="font-size:12px; color:#555; font-style:italic; margin-bottom:14px; line-height:1.5;">Creamy, hand-shaken milk teas — rich, smooth, and comforting in every sip.</p>
             <ul style="column-count:2; column-gap:20px;">
               <li>Thai Tea</li>
@@ -1844,9 +1870,14 @@ footer {
         </div>
 
         <!-- SLUSHES -->
-        <div style="margin-top:40px; padding:20px 24px; background:rgba(255,255,255,0.55); border-left:4px solid var(--red); border-radius:8px; position:relative; z-index:2;">
-          <div style="font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:2.5px; color:var(--red); margin-bottom:4px;">SLUSHES <span style="color:#1a1a1a;">$5.25</span></div>
-          <p style="font-size:13px; color:#555; font-style:italic; margin:0; line-height:1.5;">Any fruit tea can be made into a slush. Mix &amp; match 2 flavors.</p>
+        <div style="margin-top:30px; display:grid; grid-template-columns: 1fr auto; gap:24px; align-items:center; padding:20px 24px; background:rgba(255,255,255,0.55); border-left:4px solid var(--red); border-radius:8px; position:relative; z-index:2;">
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:2.5px; color:var(--red); margin-bottom:4px;">🥤 SLUSHES <span style="color:#1a1a1a;">$5.25</span></div>
+            <p style="font-size:13px; color:#555; font-style:italic; margin:0; line-height:1.5;">Any fruit tea can be made into a slush. Mix &amp; match 2 flavors.</p>
+          </div>
+          <div style="width:140px; height:120px; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.15); flex-shrink:0;">
+            <img src="images/slushies.png" alt="Slushies" style="width:100%; height:100%; object-fit:cover;">
+          </div>
         </div>
 
         <!-- TOPPINGS -->
@@ -2348,6 +2379,36 @@ footer {
       <a href="#" class="album-item" data-cat="vibe">
         <div class="album-photo real"><img src="images/exterior.jpg" alt="Tokyo Express Greensboro exterior"></div>
         <div class="album-caption"><h5>Welcome In</h5><p>3722 E. Battleground Ave · Greensboro</p></div>
+      </a>
+
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo real"><img src="images/thai-milk-tea.png" alt="Thai Milk Tea"></div>
+        <div class="album-caption"><h5>Thai Milk Tea</h5><p>Creamy · bold · classic boba</p></div>
+      </a>
+
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo real"><img src="images/pastel-milk-tea.png" alt="Pastel Milk Tea"></div>
+        <div class="album-caption"><h5>Milk Tea</h5><p>Smooth · dreamy · hand-shaken</p></div>
+      </a>
+
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo real"><img src="images/fruit-tea-variety.png" alt="Fruit Tea Collection"></div>
+        <div class="album-caption"><h5>Fruit Tea Collection</h5><p>15 flavors · bright & refreshing</p></div>
+      </a>
+
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo real"><img src="images/cream-fruit-tea.png" alt="Cream Fruit Tea"></div>
+        <div class="album-caption"><h5>Cream Fruit Tea</h5><p>Fruit tea topped with velvet cream</p></div>
+      </a>
+
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo real"><img src="images/strawberry-lemonade.png" alt="Strawberry Lemonade"></div>
+        <div class="album-caption"><h5>Strawberry Lemonade</h5><p>Fresh · fizzy · summer-ready</p></div>
+      </a>
+
+      <a href="#menu" class="album-item" data-cat="boba">
+        <div class="album-photo real"><img src="images/slushies.png" alt="Slushies"></div>
+        <div class="album-caption"><h5>Slushies</h5><p>Any fruit tea · mix 2 flavors</p></div>
       </a>
     </div>
 
